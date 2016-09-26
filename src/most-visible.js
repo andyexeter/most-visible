@@ -1,8 +1,10 @@
-/*!
- * Most Visible
+/**
+ * Most Visible v0.0.5
  *
  * Returns the most visible element from a given set
  * of elements.
+ *
+ * licence: MIT
  */
 (function( root, factory ) {
 	'use strict';
