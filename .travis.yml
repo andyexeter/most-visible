@@ -14,8 +14,6 @@ env:
     - NPM_CONFIG_PROGRESS="false"
 matrix:
   fast_finish: true
-  exclude:
-    - node_js: "4"
 script:
   - grunt jshint --verbose
   - grunt jscs --verbose
