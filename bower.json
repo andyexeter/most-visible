@@ -1,0 +1,17 @@
+{
+  "name": "most-visible",
+  "description": "Returns the most visible element from a set of elements.",
+  "main": [
+    "src/most-visible.js",
+    "src/jquery.mostVisible.js"
+  ],
+  "authors": [
+    "andyexeter <palmer.andy@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "composer.json"
+  ]
+}
