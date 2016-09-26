@@ -18,14 +18,5 @@
   "quotmark": "single",
   "undef": true,
   "unused": true,
-  "white": true,
-  "predef": [
-    "alert",
-    "console",
-    "setTimeout",
-    "setInterval",
-    "require",
-    "define",
-    "module"
-  ]
+  "white": true
 }

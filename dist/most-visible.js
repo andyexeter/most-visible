@@ -1,5 +1,5 @@
 /**
- * Most Visible
+ * Most Visible v0.0.5
  *
  * Returns the most visible element from a given set
  * of elements.
@@ -7,8 +7,9 @@
  * licence: MIT
  */
 (function( root, factory ) {
-	'use strict';
-
+	// universal module definition
+	/* jshint strict:false */
+	/* global define: false, module: false */
 	if ( typeof define === 'function' && define.amd ) {
 		define( [], factory );
 	} else if ( typeof module === 'object' && module.exports ) {
