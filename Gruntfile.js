@@ -10,13 +10,31 @@ module.exports = function( grunt ) {
 			options: {
 				jshintrc: '.jshintrc'
 			},
+			src: {
+				src: 'src/**/*.js'
+			},
 			dist: {
-				src: 'src/most-visible.js'
+				src: 'dist/most-visible.js'
 			},
 			grunt: {
 				options: {
 					node: true
 				},
+				src: 'Gruntfile.js'
+			}
+		},
+
+		jscs: {
+			options: {
+				config: '.jscsrc'
+			},
+			src: {
+				src: 'src/**/*.js'
+			},
+			dist: {
+				src: 'dist/most-visible.js'
+			},
+			grunt: {
 				src: 'Gruntfile.js'
 			}
 		},
@@ -41,16 +59,17 @@ module.exports = function( grunt ) {
 
 		watch: {
 			js: {
-				files: [ '<%= jshint.dist.src %>' ],
+				files: [ '<%= jshint.src.src %>' ],
 				tasks: [ 'default' ]
 			}
 		}
 	} );
 
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-jscs' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
-	grunt.registerTask( 'default', [ 'jshint:dist', 'copy:dist', 'uglify:dist' ] );
+	grunt.registerTask( 'default', [ 'jshint:src', 'copy:dist', 'uglify:dist' ] );
 };
