@@ -2,8 +2,7 @@
   "name": "most-visible",
   "description": "Returns the most visible element from a set of elements.",
   "main": [
-    "src/most-visible.js",
-    "src/jquery.mostVisible.js"
+    "src/most-visible.js"
   ],
   "authors": [
     "andyexeter <palmer.andy@gmail.com>"
@@ -12,6 +11,14 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "composer.json"
+    "node_modules"
+  ],
+  "keywords": [
+    "javascript",
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "visibility",
+    "viewport"
   ]
 }

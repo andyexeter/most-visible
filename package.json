@@ -20,5 +20,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/andyexeter/most-visible"
-  }
+  },
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "visibility",
+    "viewport"
+  ]
 }
