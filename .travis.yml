@@ -3,11 +3,9 @@ dist: trusty
 language: node_js
 node_js:
   - "4"
-  - "6"
 before_install:
   - npm install -g npm@3
 install:
-  - cp grunt/npm-shrinkwrap.json ./
   - npm install
 cache:
   directories:
