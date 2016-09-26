@@ -1,10 +1,9 @@
-sudo: required
-dist: trusty
 language: node_js
 node_js:
   - "4"
 before_install:
   - npm install -g npm@3
+  - npm install -g grunt-cli
 install:
   - npm install
 cache:
