@@ -1,0 +1,24 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "4"
+  - "6"
+before_install:
+  - npm install -g npm@3
+install:
+  - cp grunt/npm-shrinkwrap.json ./
+  - npm install
+cache:
+  directories:
+    - node_modules
+env:
+  global:
+    - NPM_CONFIG_PROGRESS="false"
+matrix:
+  fast_finish: true
+  exclude:
+    - node_js: "4"
+script:
+  - grunt jshint --verbose
+  - grunt jscs --verbose

@@ -72,6 +72,12 @@ $( '.my-elements' ).mostVisible();
 ## Options
 `percentage` - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
 
+Modify the `MostVisible.defaults` object to change default option values:
+
+```js
+MostVisible.defaults.percentage = true;
+```
+
 ## Licence
 
 The MIT License (MIT)

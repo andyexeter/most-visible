@@ -6,8 +6,8 @@
  *
  * licence: MIT
  */
-(function( root, factory ) {
-	// universal module definition
+( function( root, factory ) {
+	// Universal Module Definition
 	/* jshint strict:false */
 	/* global define: false, module: false */
 	if ( typeof define === 'function' && define.amd ) {
@@ -22,8 +22,8 @@
 	'use strict';
 
 	function MostVisible( elements, options ) {
-		if ( !(this instanceof MostVisible) ) {
-			return (new MostVisible( elements, options )).getMostVisible();
+		if ( !( this instanceof MostVisible ) ) {
+			return ( new MostVisible( elements, options ) ).getMostVisible();
 		}
 
 		this.elements = elements;
@@ -40,7 +40,7 @@
 		 * @returns {Element} Most visible element.
 		 */
 		getMostVisible: function() {
-			var element = null,
+			var element    = null,
 				maxVisible = 0;
 
 			for ( var i = 0; i < this.elements.length; i++ ) {
@@ -61,10 +61,10 @@
 		 * @returns {number} The visible height of the element in pixels or a percentage of the element's total height.
 		 */
 		getVisibleHeight: function( element ) {
-			var rect = element.getBoundingClientRect(),
-				height = rect.bottom - rect.top,
-				visible = {
-					top: rect.top >= 0 && rect.top < this.viewportHeight,
+			var rect      = element.getBoundingClientRect(),
+				height    = rect.bottom - rect.top,
+				visible   = {
+					top:    rect.top >= 0 && rect.top < this.viewportHeight,
 					bottom: rect.bottom > 0 && rect.bottom < this.viewportHeight
 				},
 				visiblePx = 0;
@@ -86,7 +86,7 @@
 			}
 
 			if ( this.options.percentage ) {
-				return (visiblePx / height) * 100;
+				return ( visiblePx / height ) * 100;
 			}
 
 			return visiblePx;
@@ -102,7 +102,7 @@
 
 		$.fn.mostVisible = function( options ) {
 			var instance = new MostVisible( this.get(), options ),
-				element = instance.getMostVisible();
+				element  = instance.getMostVisible();
 
 			if ( !element ) {
 				return $( [] );
@@ -128,4 +128,4 @@
 
 	return MostVisible;
 
-} ));
+} ) );
