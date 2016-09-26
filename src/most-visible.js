@@ -3,9 +3,6 @@
  *
  * Returns the most visible element from a given set
  * of elements.
- *
- * @author Andy Palmer <andy@andypalmer.me>
- * @licence GPLv3 or later
  */
 (function( root, factory ) {
 	'use strict';
