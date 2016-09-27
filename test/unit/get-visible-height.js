@@ -1,3 +1,4 @@
+/* global QUnit:false, mostVisible:false */
 QUnit.test( 'getVisibleHeight returns a number', function( assert ) {
 	'use strict';
 

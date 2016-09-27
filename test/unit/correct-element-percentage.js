@@ -1,4 +1,5 @@
-QUnit.test( 'when scrolled half way and percentage is true, middle element should be most visible', function( assert ) {
+/* global QUnit:false, $:false */
+QUnit.test( 'when scrolled 20px past the top element and percentage is true, middle element should be most visible', function( assert ) {
 	'use strict';
 
 	var done = assert.async();

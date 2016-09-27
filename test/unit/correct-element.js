@@ -1,3 +1,4 @@
+/* global QUnit:false, $:false */
 QUnit.test( 'when scrolled to bottom, last element should be most visible', function( assert ) {
 	'use strict';
 

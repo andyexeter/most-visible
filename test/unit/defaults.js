@@ -1,3 +1,4 @@
+/* global QUnit:false, $:false, mostVisible:false */
 QUnit.test( 'change default options', function( assert ) {
 	'use strict';
 

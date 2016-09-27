@@ -1,4 +1,5 @@
-QUnit.test( 'instance', function( assert ) {
+/* global QUnit:false, mostVisible:false */
+QUnit.test( 'new object instance and method call', function( assert ) {
 	'use strict';
 
 	var elements = document.querySelectorAll( '#elements .element' );

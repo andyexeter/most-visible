@@ -1,9 +1,8 @@
+/* global QUnit:false, mostVisible:false */
 QUnit.test( 'vanilla js function call', function( assert ) {
 	'use strict';
 
-	var elements = document.querySelectorAll( '#elements .element' );
-
-	var element = mostVisible( elements, {} );
+	var element = mostVisible( document.querySelectorAll( '#elements .element' ) );
 
 	assert.isElement( element, 'we have an element.' );
 
