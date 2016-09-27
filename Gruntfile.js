@@ -42,7 +42,6 @@ module.exports = function( grunt ) {
 		qunit: {
 			dist: {
 				options: {
-					'--debug': true,
 					page: {
 						viewportSize: { height: 966 }
 					}
@@ -85,4 +84,6 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
 	grunt.registerTask( 'default', [ 'jshint:src', 'copy:dist', 'uglify:dist' ] );
+
+	grunt.registerTask( 'test', [ 'qunit' ] );
 };
