@@ -1,5 +1,5 @@
 /**
- * Most Visible v0.9.1
+ * Most Visible v0.9.2
  *
  * Returns the most visible element from a given set
  * of elements.
@@ -15,7 +15,7 @@
 	} else if ( typeof module === 'object' && module.exports ) {
 		module.exports = factory( root );
 	} else {
-		root.MostVisible = factory( root );
+		root.mostVisible = factory( root );
 	}
 
 }( this, function( window ) {

@@ -45,7 +45,7 @@ var element = mostVisible( elements );
 // with options
 element = mostVisible( elements, options );
 // as an instance
-var instance = new MostVisible(elements, options);
+var instance = new mostVisible(elements, options);
 instance.getMostVisible();
 ```
 
