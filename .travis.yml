@@ -15,5 +15,7 @@ env:
 matrix:
   fast_finish: true
 script:
+  - grunt dist --verbose
   - grunt jshint --verbose
   - grunt jscs --verbose
+  - grunt test --verbose
