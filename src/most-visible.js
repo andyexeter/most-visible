@@ -15,7 +15,7 @@
 	} else if ( typeof module === 'object' && module.exports ) {
 		module.exports = factory( root );
 	} else {
-		root.MostVisible = factory( root );
+		root.mostVisible = factory( root );
 	}
 
 }( this, function( window ) {
