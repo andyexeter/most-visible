@@ -83,7 +83,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
-	grunt.registerTask( 'default', [ 'jshint:src', 'copy:dist', 'uglify:dist' ] );
-
+	grunt.registerTask( 'dist', [ 'copy:dist', 'uglify:dist' ] );
 	grunt.registerTask( 'test', [ 'qunit' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'jscs', 'dist' ] );
 };
