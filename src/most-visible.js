@@ -1,5 +1,5 @@
 /**
- * Most Visible v0.9.1
+ * Most Visible v0.9.2
  *
  * Returns the most visible element from a given set
  * of elements.
