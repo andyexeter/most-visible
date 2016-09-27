@@ -1,8 +1,8 @@
-/* global QUnit:false, $:false, mostVisible:false */
+/* global QUnit:false, jQuery:false, mostVisible:false */
 QUnit.test( 'change default options', function( assert ) {
 	'use strict';
 
-	var defaults = $.extend( {}, mostVisible.defaults );
+	var defaults = jQuery.extend( {}, mostVisible.defaults );
 
 	mostVisible.defaults.percentage = !mostVisible.defaults.percentage;
 
