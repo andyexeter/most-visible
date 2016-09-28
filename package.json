@@ -13,6 +13,7 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jscs": "^3.0.1",
+    "jquery": "^3.1.1",
     "qunitjs": "^2.0.1"
   },
   "files": [
