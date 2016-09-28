@@ -21,5 +21,10 @@
     "ecosystem:jquery",
     "visibility",
     "viewport"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
   ]
 }
