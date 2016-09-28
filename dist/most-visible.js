@@ -17,6 +17,13 @@
 }( this, function( window ) {
 	'use strict';
 
+	/**
+	 * MostVisible constructor
+	 *
+	 * @param {NodeList} elements
+	 * @param {object} options
+	 * @constructor
+	 */
 	function MostVisible( elements, options ) {
 		if ( !( this instanceof MostVisible ) ) {
 			return ( new MostVisible( elements, options ) ).getMostVisible();
@@ -27,12 +34,19 @@
 		this.viewportHeight = document.documentElement.clientHeight;
 	}
 
+	/**
+	 * MostVisible default options
+	 *
+	 * @type {{percentage: boolean}} Whether to calculate visibility as a percentage of height.
+	 */
 	MostVisible.defaults = {
 		percentage: false
 	};
 
 	MostVisible.prototype = {
 		/**
+		 * Returns the most visible element from the instance's NodeList
+		 *
 		 * @returns {Element} Most visible element.
 		 */
 		getMostVisible: function() {
@@ -52,6 +66,7 @@
 		},
 
 		/**
+		 * Returns the visible height of an element.
 		 *
 		 * @param {Element} element Element to check the visibility of.
 		 * @returns {number} The visible height of the element in pixels or a percentage of the element's total height.
@@ -60,7 +75,7 @@
 			var rect      = element.getBoundingClientRect(),
 				height    = rect.bottom - rect.top,
 				visible   = {
-					top:    rect.top >= 0 && rect.top < this.viewportHeight,
+					top: rect.top >= 0 && rect.top < this.viewportHeight,
 					bottom: rect.bottom > 0 && rect.bottom < this.viewportHeight
 				},
 				visiblePx = 0;
@@ -89,6 +104,12 @@
 		}
 	};
 
+	/**
+	 * Creates the jQuery plugin and attaches it to the given
+	 * jQuery or jQuery on the window if it exists.
+	 *
+	 * @param $ jQuery object which the plugin should be attached to.
+	 */
 	MostVisible.makeJQueryPlugin = function( $ ) {
 		$ = $ || window.jQuery;
 
@@ -108,18 +129,25 @@
 		};
 	};
 
+	// Try adding the jQuery plugin to window.jQuery
 	MostVisible.makeJQueryPlugin();
 
-	function extend() {
+	/**
+	 * Extends obj by adding the keys/values of all other objects passed to the function.
+	 *
+	 * @param {...object} obj
+	 * @returns {object} The extended object.
+	 */
+	function extend( obj ) {
 		for ( var i = 1; i < arguments.length; i++ ) {
 			for ( var key in arguments[ i ] ) {
 				if ( arguments[ i ].hasOwnProperty( key ) ) {
-					arguments[ 0 ][ key ] = arguments[ i ][ key ];
+					obj[ key ] = arguments[ i ][ key ];
 				}
 			}
 		}
 
-		return arguments[ 0 ];
+		return obj;
 	}
 
 	return MostVisible;
