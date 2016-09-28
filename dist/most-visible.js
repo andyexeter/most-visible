@@ -137,7 +137,7 @@
 	MostVisible.makeJQueryPlugin();
 
 	/**
-	 * Extends obj by adding the keys/values of all other objects passed to the function.
+	 * Extends obj by adding the properties of all other objects passed to the function.
 	 *
 	 * @param {...object} obj
 	 * @returns {object} The extended object.
