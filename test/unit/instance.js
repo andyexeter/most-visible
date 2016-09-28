@@ -8,10 +8,6 @@ QUnit.test( 'new object instance and method call', function( assert ) {
 
 	var element = instance.getMostVisible();
 
-	assert.ok( isElement( element ), 'we have an element.' );
-
-	function isElement( element ) {
-		return element && element.nodeType === 1;
-	}
+	assert.ok( element instanceof HTMLElement, 'we have an element.' );
 
 } );
