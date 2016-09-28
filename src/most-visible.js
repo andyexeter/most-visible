@@ -20,13 +20,17 @@
 	/**
 	 * MostVisible constructor
 	 *
-	 * @param {NodeList} elements
+	 * @param {NodeList, String} elements
 	 * @param {object} options
 	 * @constructor
 	 */
 	function MostVisible( elements, options ) {
 		if ( !( this instanceof MostVisible ) ) {
 			return ( new MostVisible( elements, options ) ).getMostVisible();
+		}
+
+		if ( typeof elements === 'string' ) {
+			elements = document.querySelectorAll( elements );
 		}
 
 		this.elements = elements;
