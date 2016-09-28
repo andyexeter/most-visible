@@ -61,7 +61,7 @@ module.exports = function( grunt ) {
 			dist: {
 				options: {
 					report: 'gzip',
-					preserveComments: 'some'
+					preserveComments: /(?:^!|@(?:license|preserve|cc_on))/
 				},
 				src: 'dist/most-visible.js',
 				dest: 'dist/most-visible.min.js'
