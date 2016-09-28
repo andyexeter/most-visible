@@ -11,7 +11,8 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "node_modules"
+    "node_modules",
+    "test"
   ],
   "keywords": [
     "javascript",
@@ -20,5 +21,10 @@
     "ecosystem:jquery",
     "visibility",
     "viewport"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
   ]
 }
