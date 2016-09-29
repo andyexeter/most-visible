@@ -4,6 +4,6 @@ QUnit.test( 'vanilla js function call', function( assert ) {
 
 	var element = mostVisible( document.querySelectorAll( '#elements .element' ) );
 
-	assert.isElement( element, 'we have an element.' );
+	assert.ok( element instanceof HTMLElement, 'we have an element.' );
 
 } );

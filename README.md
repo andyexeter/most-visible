@@ -1,5 +1,10 @@
 # Most Visible
 
+[![Build status](https://img.shields.io/travis/andyexeter/most-visible.svg?maxAge=2592000)](https://travis-ci.org/andyexeter/most-visible)
+[![npm version](https://img.shields.io/npm/v/most-visible.svg?maxAge=2592000)](https://www.npmjs.com/package/most-visible)
+![Bower version](https://img.shields.io/bower/v/most-visible.svg)
+[![devDependency Status](https://img.shields.io/david/dev/andyexeter/most-visible.svg)](https://david-dm.org/andyexeter/most-visible#info=devDependencies)
+
 A JavaScript (and jQuery) plugin which returns the most visible element from a given set.
 
 ## Installation
@@ -41,11 +46,16 @@ $( '.my-elements' ).mostVisible( { percentage: true } ).addClass( 'most-visible'
 #### Vanilla JavaScript
 
 ```js
+// elements can be a NodeList or a selector string
+var elements = document.querySelectorAll( '.elements' );
+
 var element = mostVisible( elements );
+
 // with options
 element = mostVisible( elements, options );
+
 // as an instance
-var instance = new mostVisible(elements, options);
+var instance = new mostVisible( '.elements', options );
 instance.getMostVisible();
 ```
 
@@ -72,10 +82,10 @@ $( '.my-elements' ).mostVisible();
 ## Options
 `percentage` - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
 
-Modify the `MostVisible.defaults` object to change default option values:
+Modify the `mostVisible.defaults` object to change default option values:
 
 ```js
-MostVisible.defaults.percentage = true;
+mostVisible.defaults.percentage = true;
 ```
 
 ## Licence
