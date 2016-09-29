@@ -1,5 +1,5 @@
 /*!
- * Most Visible v1.0.0
+ * Most Visible v1.0.1
  * licence: MIT
  */
 ( function( root, factory ) {
