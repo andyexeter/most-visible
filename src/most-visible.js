@@ -9,12 +9,12 @@
 	if ( typeof define === 'function' && define.amd ) {
 		define( [], factory );
 	} else if ( typeof module === 'object' && module.exports ) {
-		module.exports = factory( root );
+		module.exports = factory;
 	} else {
 		root.mostVisible = factory( root );
 	}
 
-}( this, function( window ) {
+}( this, function( window, jQuery ) {
 	'use strict';
 
 	/**
@@ -36,6 +36,10 @@
 		this.elements = elements;
 		this.options = extend( {}, MostVisible.defaults, options );
 		this.viewportHeight = document.documentElement.clientHeight;
+	}
+
+	if ( jQuery !== false ) {
+		makeJQueryPlugin( jQuery );
 	}
 
 	/**
@@ -108,13 +112,7 @@
 		}
 	};
 
-	/**
-	 * Creates the jQuery plugin and attaches it to the given
-	 * jQuery or jQuery on the window if it exists.
-	 *
-	 * @param $ jQuery object which the plugin should be attached to.
-	 */
-	MostVisible.makeJQueryPlugin = function( $ ) {
+	function makeJQueryPlugin( $ ) {
 		$ = $ || window.jQuery;
 
 		if ( !$ ) {
@@ -131,10 +129,7 @@
 
 			return $( element );
 		};
-	};
-
-	// Try adding the jQuery plugin to window.jQuery
-	MostVisible.makeJQueryPlugin();
+	}
 
 	/**
 	 * Extends obj by adding the properties of all other objects passed to the function.
