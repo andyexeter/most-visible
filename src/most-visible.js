@@ -124,7 +124,7 @@
 				element  = instance.getMostVisible();
 
 			if ( !element ) {
-				return $( [] );
+				return $();
 			}
 
 			return $( element );
