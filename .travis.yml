@@ -18,5 +18,4 @@ matrix:
 script:
   - grunt dist --verbose
   - grunt jshint --verbose
-  - grunt jscs --verbose
   - grunt test --verbose
