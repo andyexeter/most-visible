@@ -1,0 +1,12 @@
+default:
+  - 'jshint:src'
+  - 'dist'
+  - 'readme'
+
+dist:
+  - 'includes:dist'
+  - 'uglify:dist'
+  - 'jshint:dist'
+
+test:
+  - 'qunit'

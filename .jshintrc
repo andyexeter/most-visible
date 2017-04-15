@@ -9,7 +9,6 @@
   "immed": true,
   "indent": 2,
   "latedef": "nofunc",
-  "maxlen": false,
   "maxstatements": 50,
   "newcap": true,
   "node": true,
@@ -18,5 +17,8 @@
   "quotmark": "single",
   "undef": true,
   "unused": true,
-  "white": true
+  "white": true,
+  "predef": [
+    "jQuery"
+  ]
 }

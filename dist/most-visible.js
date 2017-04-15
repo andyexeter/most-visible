@@ -1,20 +1,24 @@
-/*!
+/**
  * Most Visible v1.0.1
- * licence: MIT
+ *
+ * @author Andy Palmer <andy@andypalmer.me>
+ * @license MIT
  */
-( function( root, factory ) {
+( function (root, factory) {
 	// Universal Module Definition
 	/* jshint strict:false */
 	/* global define: false, module: false */
-	if ( typeof define === 'function' && define.amd ) {
-		define( [], factory );
-	} else if ( typeof module === 'object' && module.exports ) {
+	if (typeof define === 'function' && define.amd) {
+		define([], factory);
+	} else if (typeof module === 'object' && module.exports) {
 		module.exports = factory;
 	} else {
-		root.mostVisible = factory( root );
+		root.mostVisible = factory(root);
 	}
 
-}( this, function( window, jQuery ) {
+}(this, function (window, jQuery) {
+	/* jshint unused: vars */
+
 	'use strict';
 
 	/**
@@ -24,22 +28,22 @@
 	 * @param {object} options
 	 * @constructor
 	 */
-	function MostVisible( elements, options ) {
-		if ( !( this instanceof MostVisible ) ) {
-			return ( new MostVisible( elements, options ) ).getMostVisible();
+	function MostVisible(elements, options) {
+		if (!( this instanceof MostVisible )) {
+			return ( new MostVisible(elements, options) ).getMostVisible();
 		}
 
-		if ( typeof elements === 'string' ) {
-			elements = document.querySelectorAll( elements );
+		if (typeof elements === 'string') {
+			elements = document.querySelectorAll(elements);
 		}
 
 		this.elements = elements;
-		this.options = extend( {}, MostVisible.defaults, options );
+		this.options = extend({}, MostVisible.defaults, options);
 		this.viewportHeight = document.documentElement.clientHeight;
 	}
 
-	if ( jQuery !== false ) {
-		makeJQueryPlugin( jQuery );
+	if (jQuery !== false) {
+		makeJQueryPlugin(jQuery);
 	}
 
 	/**
@@ -57,16 +61,16 @@
 		 *
 		 * @returns {Element} Most visible element.
 		 */
-		getMostVisible: function() {
-			var element    = null,
+		getMostVisible: function () {
+			var element = null,
 				maxVisible = 0;
 
-			for ( var i = 0; i < this.elements.length; i++ ) {
-				var currentVisible = this.getVisibleHeight( this.elements[ i ] );
+			for (var i = 0; i < this.elements.length; i++) {
+				var currentVisible = this.getVisibleHeight(this.elements[i]);
 
-				if ( currentVisible > maxVisible ) {
+				if (currentVisible > maxVisible) {
 					maxVisible = currentVisible;
-					element = this.elements[ i ];
+					element = this.elements[i];
 				}
 			}
 
@@ -79,32 +83,32 @@
 		 * @param {Element} element Element to check the visibility of.
 		 * @returns {number} The visible height of the element in pixels or a percentage of the element's total height.
 		 */
-		getVisibleHeight: function( element ) {
-			var rect      = element.getBoundingClientRect(),
-				height    = rect.bottom - rect.top,
-				visible   = {
+		getVisibleHeight: function (element) {
+			var rect = element.getBoundingClientRect(),
+				height = rect.bottom - rect.top,
+				visible = {
 					top: rect.top >= 0 && rect.top < this.viewportHeight,
 					bottom: rect.bottom > 0 && rect.bottom < this.viewportHeight
 				},
 				visiblePx = 0;
 
-			if ( visible.top && visible.bottom ) {
+			if (visible.top && visible.bottom) {
 				// Whole element is visible
 				visiblePx = height;
-			} else if ( visible.top ) {
+			} else if (visible.top) {
 				visiblePx = this.viewportHeight - rect.top;
-			} else if ( visible.bottom ) {
+			} else if (visible.bottom) {
 				visiblePx = rect.bottom;
-			} else if ( height > this.viewportHeight && rect.top < 0 ) {
-				var absTop = Math.abs( rect.top );
+			} else if (height > this.viewportHeight && rect.top < 0) {
+				var absTop = Math.abs(rect.top);
 
-				if ( absTop < height ) {
+				if (absTop < height) {
 					// Part of the element is visible
 					visiblePx = height - absTop;
 				}
 			}
 
-			if ( this.options.percentage ) {
+			if (this.options.percentage) {
 				return ( visiblePx / height ) * 100;
 			}
 
@@ -112,22 +116,22 @@
 		}
 	};
 
-	function makeJQueryPlugin( $ ) {
+	function makeJQueryPlugin($) {
 		$ = $ || window.jQuery;
 
-		if ( !$ ) {
+		if (!$) {
 			return;
 		}
 
-		$.fn.mostVisible = function( options ) {
-			var instance = new MostVisible( this.get(), options ),
-				element  = instance.getMostVisible();
+		$.fn.mostVisible = function (options) {
+			var instance = new MostVisible(this.get(), options),
+				element = instance.getMostVisible();
 
-			if ( !element ) {
-				return $( [] );
+			if (!element) {
+				return $();
 			}
 
-			return $( element );
+			return $(element);
 		};
 	}
 
@@ -137,11 +141,11 @@
 	 * @param {...object} obj
 	 * @returns {object} The extended object.
 	 */
-	function extend( obj ) {
-		for ( var i = 1; i < arguments.length; i++ ) {
-			for ( var key in arguments[ i ] ) {
-				if ( arguments[ i ].hasOwnProperty( key ) ) {
-					obj[ key ] = arguments[ i ][ key ];
+	function extend(obj) {
+		for (var i = 1; i < arguments.length; i++) {
+			for (var key in arguments[i]) {
+				if (arguments[i].hasOwnProperty(key)) {
+					obj[key] = arguments[i][key];
 				}
 			}
 		}
@@ -149,6 +153,7 @@
 		return obj;
 	}
 
+	//noinspection JSAnnotator
 	return MostVisible;
 
-} ) );
+}) );
