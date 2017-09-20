@@ -1,5 +1,5 @@
 /*!
- * Most Visible v1.0.1
+ * Most Visible v1.0.2
  * licence: MIT
  */
 ( function (root, factory) {
@@ -25,7 +25,7 @@
      * @constructor
      */
     function MostVisible(elements, options) {
-        if (!( this instanceof MostVisible )) {
+        if ( !( this instanceof MostVisible )) {
             return ( new MostVisible(elements, options) ).getMostVisible();
         }
 
