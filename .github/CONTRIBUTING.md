@@ -8,10 +8,11 @@ issues beforehand.
 ## Creating a pull request
 Pull requests are very welcome. Please use the standard 'fork and pull' github model:
 
-1. Fork the repository and and clone locally.
-2. Run `npm install` to download dev dependencies.
-3. Create a new branch for your changes. Commit your changes.
-4. Open a pull request
+1. Fork the repository and clone locally.
+2. Run `yarn` or `npm install` to download dev dependencies.
+3. Create a new branch for your changes e.g feature/my-feature or hotfix/my-fix 
+4. Commit your changes
+5. Open a pull request
 
 All pull requests must pass travis CI builds so please ensure your code follows
 the standards within `.jshintrc`, `.jscsrc` and passes QUnit tests (You can use `grunt test` to test your code)
