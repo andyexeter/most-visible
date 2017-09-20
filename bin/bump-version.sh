@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Bail on error
+set -e;
+
 # This script bumps version numbers in the following files:
 #	src/most-visible.js - Bumps the version number in the top comment block.
 #	package.json - Bumps the version field.
@@ -8,6 +11,9 @@
 #
 # Usage 2: ./bin/bump-version.sh <version-from> <version-to>
 # 	e.g: ./bin/bump-version.sh 1.1.1 2.0
+
+grunt test
+grunt jscs
 
 if [ "$1" == "" ]; then
 	echo "No 'from' version set. Exiting"
@@ -72,4 +78,4 @@ function bump() {
 bump src/most-visible.js " \* Most Visible v$currentversion" " \* Most Visible v$toversion"
 bump package.json "\"version\": \"$currentversion\"" "\"version\": \"$toversion\""
 
-grunt
+grunt dist
