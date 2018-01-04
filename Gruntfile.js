@@ -1,22 +1,22 @@
 module.exports = function (grunt) {
-	'use strict';
+    'use strict';
 
-	grunt.option('stack', true);
-	grunt.util.linefeed = '\n';
+    grunt.option('stack', true);
+    grunt.util.linefeed = '\n';
 
-	var project = {
-		pkg: grunt.file.readJSON('package.json'),
+    var project = {
+        pkg: grunt.file.readJSON('package.json'),
 
-		files: {
-			main: 'dist/most-visible.js',
-			min: 'dist/most-visible.min.js',
-			boilerplate: 'src/boilerplate.js'
-		},
+        files: {
+            main: 'dist/most-visible.js',
+            min: 'dist/most-visible.min.js',
+            boilerplate: 'src/boilerplate.js'
+        },
 
-		paths: {}
-	};
+        paths: {}
+    };
 
-	require('load-grunt-config')(grunt, {
-		data: project
-	});
+    require('load-grunt-config')(grunt, {
+        data: project
+    });
 };

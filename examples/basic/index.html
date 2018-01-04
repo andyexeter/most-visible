@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>MostVisible Demo</title>
-	<link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>MostVisible Demo</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div id="main">
-	<div class="container">
-		<h1>MostVisible Demo Page</h1>
-		<div>
-			<h3>Options:</h3>
-			<ul>
-				<li>
-					<label><input type="checkbox" name="percentage" value="1"/> percentage - Whether to calculate visibility as a percentage of the element's height.</label>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div id="sections">
-		<section id="top"><span class="text">I'm the most visible section!</span></section>
-		<section id="middle"><span class="text">I'm the most visible section!</span></section>
-		<section id="bottom"><span class="text">I'm the most visible section!</span></section>
-	</div>
+    <div class="container">
+        <h1>MostVisible Demo Page</h1>
+        <div>
+            <h3>Options:</h3>
+            <ul>
+                <li>
+                    <label><input type="checkbox" name="percentage" value="1"/> percentage - Whether to calculate visibility as a percentage of the element's height.</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="sections">
+        <section id="top"><span class="text">I'm the most visible section!</span></section>
+        <section id="middle"><span class="text">I'm the most visible section!</span></section>
+        <section id="bottom"><span class="text">I'm the most visible section!</span></section>
+    </div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="../../dist/most-visible.js"></script>
 <div class="container">
-	<h3>Demo Source Code:</h3>
-	<script class="visible-script">
-		$( function() {
-			var $sections = $( '#sections' ).find( 'section' );
+    <h3>Demo Source Code:</h3>
+    <script class="visible-script">
+        $(function () {
+            var $sections = $('#sections').find('section');
 
-			checkVisibility();
+            checkVisibility();
 
-			$( window ).on( 'scroll', function() {
-				checkVisibility();
-			} );
+            $(window).on('scroll', function () {
+                checkVisibility();
+            });
 
-			function checkVisibility() {
-				var percentage = $( 'input[name=percentage]' ).is( ':checked' );
-				$sections.removeClass( 'most-visible' ).mostVisible( { percentage: percentage } ).addClass( 'most-visible' );
-			}
-		} );
-	</script>
+            function checkVisibility() {
+                var percentage = $('input[name=percentage]').is(':checked');
+                $sections.removeClass('most-visible').mostVisible({percentage: percentage}).addClass('most-visible');
+            }
+        });
+    </script>
 </div>
 </html>

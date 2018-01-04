@@ -25,14 +25,14 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ```
 
 #### Package Managers
+Install via yarn:
+```sh
+$ yarn add <%= pkg.name %>
+```
+
 Install via NPM:
 ```sh
 $ npm install <%= pkg.name %> --save
-```
-
-Install via Bower:
-```sh
-$ bower install <%= bwr.name %> --save
 ```
 
 ## Usage
@@ -40,46 +40,42 @@ $ bower install <%= bwr.name %> --save
 #### jQuery
 
 ```js
-$( '.my-elements' ).mostVisible().addClass( 'most-visible' );
+$('.my-elements').mostVisible().addClass('most-visible');
 
 // with options
-$( '.my-elements' ).mostVisible( { percentage: true } ).addClass( 'most-visible' );
+$('.my-elements').mostVisible({ percentage: true }).addClass('most-visible');
 ```
 
 #### Vanilla JavaScript
 
 ```js
-// elements can be a NodeList or a selector string
-var elements = document.querySelectorAll( '.elements' );
+// You can pass in either a selector string or NodeList as the first argument
+var element = mostVisible('.elements');
 
-var element = mostVisible( elements );
-
-// with options
-element = mostVisible( elements, options );
+element = mostVisible(document.querySelectorAll('.elements'), {
+    percentage: true
+});
 
 // as an instance
-var instance = new mostVisible( '.elements', options );
+var instance = new mostVisible('.elements');
 instance.getMostVisible();
 ```
 
-#### Browserify
-```sh
-$ npm install <%= pkg.name %> --save
-```
+#### Webpack and Browserify
 
 ```js
-var mostVisible = require( 'most-visible' );
-mostVisible( elements, options );
+var mostVisible = require('most-visible');
+mostVisible('.elements');
 ```
 
 To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJQueryPlugin`: 
 ```js
-var $ = require( 'jquery' );
-var mostVisible = require( 'most-visible' );
+var $ = require('jquery');
+var mostVisible = require('most-visible');
 
-mostVisible.makeJQueryPlugin( $ );
+mostVisible.makeJQueryPlugin($);
 
-$( '.my-elements' ).mostVisible();
+$('.my-elements').mostVisible();
 ```
 
 ## Options

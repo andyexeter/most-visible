@@ -16,7 +16,7 @@
     "grunt-includes": "^1.0.0",
     "jquery": "^3.1.1",
     "load-grunt-config": "^0.19.2",
-    "qunitjs": "^2.0.1"
+    "qunit": "^2.0.1"
   },
   "files": [
     "dist",

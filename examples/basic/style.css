@@ -1,47 +1,47 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 .container {
-	padding: 0 20px;
+    padding: 0 20px;
 }
 
 #sections section .text {
-	display: none;
-	text-align: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 22px;
+    display: none;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
 }
 
 #sections section.most-visible .text {
-	display: block;
+    display: block;
 }
 
 #top {
-	height: 500px;
-	background-color: #ccc;
+    height: 500px;
+    background-color: #ccc;
 }
 
 #middle {
-	height: 200px;
-	background-color: #555;
+    height: 200px;
+    background-color: #555;
 }
 
 #bottom {
-	height: 1000px;
-	background-color: #ebebeb;
+    height: 1000px;
+    background-color: #ebebeb;
 }
 
 .most-visible {
-	background-color: aquamarine !important;
+    background-color: aquamarine !important;
 }
 
 .visible-script {
-	display: block;
-	white-space: pre;
-	font-family: monospace;
+    display: block;
+    white-space: pre;
+    font-family: monospace;
 }
