@@ -14,8 +14,8 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js) (1.35kB, 681B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.js)  (3.54kB, 1.31kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js) (1.11kB, 571B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.js)  (4.44kB, 1.36kB gzipped)
 
 #### CDN
 ```html
@@ -25,14 +25,14 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ```
 
 #### Package Managers
+Install via yarn:
+```sh
+$ yarn add most-visible
+```
+
 Install via NPM:
 ```sh
 $ npm install most-visible --save
-```
-
-Install via Bower:
-```sh
-$ bower install most-visible --save
 ```
 
 ## Usage
@@ -40,46 +40,42 @@ $ bower install most-visible --save
 #### jQuery
 
 ```js
-$( '.my-elements' ).mostVisible().addClass( 'most-visible' );
+$('.my-elements').mostVisible().addClass('most-visible');
 
 // with options
-$( '.my-elements' ).mostVisible( { percentage: true } ).addClass( 'most-visible' );
+$('.my-elements').mostVisible({ percentage: true }).addClass('most-visible');
 ```
 
 #### Vanilla JavaScript
 
 ```js
-// elements can be a NodeList or a selector string
-var elements = document.querySelectorAll( '.elements' );
+// You can pass in either a selector string or NodeList as the first argument
+var element = mostVisible('.elements');
 
-var element = mostVisible( elements );
-
-// with options
-element = mostVisible( elements, options );
+element = mostVisible(document.querySelectorAll('.elements'), {
+    percentage: true
+});
 
 // as an instance
-var instance = new mostVisible( '.elements', options );
+var instance = new mostVisible('.elements');
 instance.getMostVisible();
 ```
 
-#### Browserify
-```sh
-$ npm install most-visible --save
-```
+#### Webpack and Browserify
 
 ```js
-var mostVisible = require( 'most-visible' );
-mostVisible( elements, options );
+var mostVisible = require('most-visible');
+mostVisible('.elements');
 ```
 
 To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJQueryPlugin`: 
 ```js
-var $ = require( 'jquery' );
-var mostVisible = require( 'most-visible' );
+var $ = require('jquery');
+var mostVisible = require('most-visible');
 
-mostVisible.makeJQueryPlugin( $ );
+mostVisible.makeJQueryPlugin($);
 
-$( '.my-elements' ).mostVisible();
+$('.my-elements').mostVisible();
 ```
 
 ## Options
@@ -94,7 +90,7 @@ mostVisible.defaults.percentage = true;
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2017 [The Most Visible authors](https://github.com/andyexeter/most-visible/graphs/contributors)
+Copyright (c) 2018 [The Most Visible authors](https://github.com/andyexeter/most-visible/graphs/contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
