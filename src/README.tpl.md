@@ -38,6 +38,8 @@ $ npm install <%= pkg.name %> --save
 
 #### jQuery
 
+The plugin will automatically be added to any global (window) version of jQuery:
+
 ```js
 $('.my-elements').mostVisible().addClass('most-visible');
 
@@ -74,7 +76,7 @@ var mostVisible = require('most-visible');
 
 mostVisible.makeJQueryPlugin($);
 
-$('.my-elements').mostVisible();
+$('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options
