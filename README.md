@@ -1,6 +1,6 @@
 [//]: # (Do not edit README.md as it is automatically generated from src/README.tpl.md)
 
-# Most Visible v1.0.1
+# Most Visible v1.2.0
 
 [![Build status](https://img.shields.io/travis/andyexeter/most-visible.svg)](https://travis-ci.org/andyexeter/most-visible)
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
@@ -14,14 +14,14 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js) (1.2kB, 634B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.js)  (4.45kB, 1.36kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.2.0/dist/most-visible.min.js) (1.2kB, 635B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.2.0/dist/most-visible.js)  (4.45kB, 1.36kB gzipped)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js"></script>
+<script src="https://unpkg.com/most-visible@1.2.0/dist/most-visible.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/most-visible@1.0.1/dist/most-visible.js"></script>
+<script src="https://unpkg.com/most-visible@1.2.0/dist/most-visible.js"></script>
 ```
 
 #### Package Managers
