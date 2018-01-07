@@ -1,20 +1,22 @@
 {
   "name": "most-visible",
-  "version": "1.0.1",
+  "version": "1.2.0",
+  "title": "Most Visible",
   "description": "Returns the most visible element from a set of elements.",
   "main": "dist/most-visible.js",
-  "author": "andyexeter <palmer.andy@gmail.com>",
+  "author": "Andy Palmer <andy@andypalmer.me>",
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-qunit": "^1.2.0",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-jscs": "^3.0.1",
+    "grunt-includes": "^1.0.0",
     "jquery": "^3.1.1",
-    "qunitjs": "^2.0.1"
+    "load-grunt-config": "^0.19.2",
+    "qunit": "^2.0.1"
   },
   "files": [
     "dist",

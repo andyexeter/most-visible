@@ -1,13 +1,10 @@
 language: node_js
 node_js:
-  - "4"
+  - "6"
 before_install:
-  - npm install -g npm@3
-  - npm --version
   - npm install -g grunt-cli
-install:
-  - npm install
 cache:
+  yarn: true
   directories:
     - node_modules
 env:
@@ -18,5 +15,4 @@ matrix:
 script:
   - grunt dist --verbose
   - grunt jshint --verbose
-  - grunt jscs --verbose
   - grunt test --verbose
