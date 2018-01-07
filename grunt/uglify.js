@@ -3,7 +3,9 @@ module.exports = {
         options: {
             sourceMap: false,
             report: 'gzip',
-            preserveComments: /(?:^!|@(?:license|preserve|cc_on))/
+            output: {
+                comments: /(?:^!|@(?:license|preserve|cc_on))/
+            }
         },
         src: '<%= files.main %>',
         dest: '<%= files.min %>'
