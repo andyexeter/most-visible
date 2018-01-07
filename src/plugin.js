@@ -18,7 +18,6 @@ function MostVisible(elements, options) {
 
     this.elements = elements;
     this.options = extend({}, MostVisible.defaults, options);
-    this.viewportHeight = document.documentElement.clientHeight;
 }
 
 /**
@@ -37,11 +36,12 @@ MostVisible.prototype = {
      * @returns {Element} Most visible element.
      */
     getMostVisible: function () {
-        var element    = null,
-            maxVisible = 0;
+        var element        = null,
+            viewportHeight = document.documentElement.clientHeight,
+            maxVisible     = 0;
 
         for (var i = 0; i < this.elements.length; i++) {
-            var currentVisible = this.getVisibleHeight(this.elements[i]);
+            var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight);
 
             if (currentVisible > maxVisible) {
                 maxVisible = currentVisible;
@@ -56,14 +56,15 @@ MostVisible.prototype = {
      * Returns the visible height of an element.
      *
      * @param {Element} element Element to check the visibility of.
+     * @param viewportHeight
      * @returns {number} The visible height of the element in pixels or a percentage of the element's total height.
      */
-    getVisibleHeight: function (element) {
+    getVisibleHeight: function (element, viewportHeight) {
         var rect      = element.getBoundingClientRect(),
             height    = rect.bottom - rect.top,
             visible   = {
-                top: rect.top >= 0 && rect.top < this.viewportHeight,
-                bottom: rect.bottom > 0 && rect.bottom < this.viewportHeight
+                top: rect.top >= 0 && rect.top < viewportHeight,
+                bottom: rect.bottom > 0 && rect.bottom < viewportHeight
             },
             visiblePx = 0;
 
@@ -71,10 +72,10 @@ MostVisible.prototype = {
             // Whole element is visible
             visiblePx = height;
         } else if (visible.top) {
-            visiblePx = this.viewportHeight - rect.top;
+            visiblePx = viewportHeight - rect.top;
         } else if (visible.bottom) {
             visiblePx = rect.bottom;
-        } else if (height > this.viewportHeight && rect.top < 0) {
+        } else if (height > viewportHeight && rect.top < 0) {
             var absTop = Math.abs(rect.top);
 
             if (absTop < height) {
