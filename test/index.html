@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-
-	<title>MostVisible QUnit Tests</title>
-
-	<link rel="stylesheet" href="tests.css">
-	<link rel="stylesheet" href="../node_modules/qunit/qunit/qunit.css">
-
+    <meta charset="utf-8">
+    <title>MostVisible QUnit Tests</title>
+    <link rel="stylesheet" href="tests.css">
+    <link rel="stylesheet" href="../node_modules/qunit/qunit/qunit.css">
 </head>
 <body>
 <div id="qunit"></div>
@@ -15,27 +12,16 @@
 </div>
 
 <div id="elements">
-	<h2>Elements</h2>
-	<div class="element element-one"></div>
-	<div class="element element-two"></div>
-	<div class="element element-three"></div>
+    <h2>Elements</h2>
+    <div class="element element-one"></div>
+    <div class="element element-two"></div>
+    <div class="element element-three"></div>
 </div>
 
 <script src="../node_modules/jquery/dist/jquery.js"></script>
 <script src="../node_modules/qunit/qunit/qunit.js"></script>
 <script>QUnit.config.scrolltop = false;</script>
+<script src="loader.js"></script>
 
-<script src="../dist/most-visible.js"></script>
-
-<!-- Tests -->
-<script src="unit/global-attached.js"></script>
-<script src="unit/defaults.js"></script>
-<script src="unit/jquery.js"></script>
-<script src="unit/fn-call.js"></script>
-<script src="unit/selector.js"></script>
-<script src="unit/instance.js"></script>
-<script src="unit/get-visible-height.js"></script>
-<script src="unit/correct-element.js"></script>
-<script src="unit/correct-element-percentage.js"></script>
 </body>
 </html>
