@@ -92,7 +92,7 @@ MostVisible.prototype = {
     }
 };
 
-function makeJQueryPlugin($) {
+MostVisible.makeJQueryPlugin = function($) {
     if (!$) {
         return;
     }
@@ -107,10 +107,10 @@ function makeJQueryPlugin($) {
 
         return $(element);
     };
-}
+};
 
 // Try adding the jQuery plugin to window.jQuery
-makeJQueryPlugin(window.jQuery);
+MostVisible.makeJQueryPlugin(window.jQuery);
 
 /**
  * Extends obj by adding the properties of all other objects passed to the function.

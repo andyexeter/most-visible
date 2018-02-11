@@ -14,8 +14,8 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js) (1.25kB, 656B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.js)  (4.53kB, 1.38kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js) (1.3kB, 673B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.js)  (4.56kB, 1.39kB gzipped)
 
 #### CDN
 ```html
