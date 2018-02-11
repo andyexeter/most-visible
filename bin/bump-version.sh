@@ -69,7 +69,6 @@ function bump() {
 	rm -f bumpchangelog.tmp
 }
 
-bump src/most-visible.js " \* Most Visible v$currentversion" " \* Most Visible v$toversion"
 bump package.json "\"version\": \"$currentversion\"" "\"version\": \"$toversion\""
 
 grunt

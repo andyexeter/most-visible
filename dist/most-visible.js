@@ -1,5 +1,5 @@
 /**
- * Most Visible v1.2.0
+ * Most Visible v1.2.1
  *
  * @author Andy Palmer <andy@andypalmer.me>
  * @license MIT
@@ -9,13 +9,15 @@
     /* jshint strict:false */
     /* global define: false, module: false */
     if (typeof define === 'function' && define.amd) {
-        define([], factory);
+        define([], function () {
+            return factory(root);
+        });
     } else if (typeof module === 'object' && module.exports) {
         module.exports = factory(root);
     } else {
         root.mostVisible = factory(root);
     }
-}(this, function (window) {
+}(typeof self !== 'undefined' ? self : this, function (window) {
     /* jshint unused: vars */
 
     'use strict';
@@ -112,7 +114,7 @@
         }
     };
 
-    function makeJQueryPlugin($) {
+    MostVisible.makeJQueryPlugin = function($) {
         if (!$) {
             return;
         }
@@ -127,10 +129,10 @@
 
             return $(element);
         };
-    }
+    };
 
     // Try adding the jQuery plugin to window.jQuery
-    makeJQueryPlugin(window.jQuery);
+    MostVisible.makeJQueryPlugin(window.jQuery);
 
     /**
      * Extends obj by adding the properties of all other objects passed to the function.
