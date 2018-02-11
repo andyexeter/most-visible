@@ -19,6 +19,7 @@
   "unused": true,
   "white": true,
   "predef": [
-    "jQuery"
+    "jQuery",
+    "self"
   ]
 }
