@@ -101,11 +101,9 @@ MostVisible.makeJQueryPlugin = function($) {
         var instance = new MostVisible(this.get(), options),
             element  = instance.getMostVisible();
 
-        if (!element) {
-            return $();
-        }
-
-        return $(element);
+        return this.filter(function () {
+            return this === element;
+        });
     };
 };
 

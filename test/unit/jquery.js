@@ -9,7 +9,7 @@ QUnit.test('jquery plugin', function (assert) {
     $(function () {
         var $element = $('#elements').find('.element').mostVisible();
 
-        assert.ok($element instanceof $, 'we have a jQuery element.');
+        assert.ok($element instanceof $ && $element.length, 'we have a jQuery element.');
         done();
 
         assert.ok($element.get(0) instanceof HTMLElement, 'we have an element.');
