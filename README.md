@@ -1,10 +1,9 @@
 [//]: # (Do not edit README.md as it is automatically generated from src/README.tpl.md)
 
-# Most Visible v1.0.1
+# Most Visible v1.2.1
 
 [![Build status](https://img.shields.io/travis/andyexeter/most-visible.svg)](https://travis-ci.org/andyexeter/most-visible)
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
-![Bower version](https://img.shields.io/bower/v/most-visible.svg)
 [![devDependency Status](https://img.shields.io/david/dev/andyexeter/most-visible.svg)](https://david-dm.org/andyexeter/most-visible#info=devDependencies)
 
 Returns the most visible element from a set of elements.
@@ -14,14 +13,14 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js) (1.33kB, 677B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.0.1/dist/most-visible.js)  (4.56kB, 1.39kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.2.1/dist/most-visible.min.js) (1.3kB, 673B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.2.1/dist/most-visible.js)  (4.56kB, 1.39kB gzipped)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/most-visible@1.0.1/dist/most-visible.min.js"></script>
+<script src="https://unpkg.com/most-visible@1.2.1/dist/most-visible.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/most-visible@1.0.1/dist/most-visible.js"></script>
+<script src="https://unpkg.com/most-visible@1.2.1/dist/most-visible.js"></script>
 ```
 
 #### Package Managers
@@ -38,6 +37,8 @@ $ npm install most-visible --save
 ## Usage
 
 #### jQuery
+
+The plugin will automatically be added to any global (window) version of jQuery:
 
 ```js
 $('.my-elements').mostVisible().addClass('most-visible');
@@ -80,7 +81,7 @@ var mostVisible = require('most-visible');
 
 mostVisible.makeJQueryPlugin($);
 
-$('.my-elements').mostVisible();
+$('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options

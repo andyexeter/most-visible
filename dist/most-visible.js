@@ -1,5 +1,5 @@
 /**
- * Most Visible v1.0.1
+ * Most Visible v1.2.1
  *
  * @author Andy Palmer <andy@andypalmer.me>
  * @license MIT
