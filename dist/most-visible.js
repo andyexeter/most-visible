@@ -1,5 +1,5 @@
 /**
- * Most Visible v1.2.1
+ * Most Visible v1.3.0
  *
  * @author Andy Palmer <andy@andypalmer.me>
  * @license MIT
@@ -25,8 +25,8 @@
     /**
      * MostVisible constructor
      *
-     * @param {NodeList, String} elements
-     * @param {object} options
+     * @param {NodeList|string} elements
+     * @param {Object} options
      * @constructor
      */
     function MostVisible(elements, options) {
@@ -45,7 +45,9 @@
     /**
      * MostVisible default options
      *
-     * @type {{percentage: boolean}} Whether to calculate visibility as a percentage of height.
+     * @namespace
+     * @property {object}  defaults             Default options hash.
+     * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
      */
     MostVisible.defaults = {
         percentage: false
@@ -53,7 +55,7 @@
 
     MostVisible.prototype = {
         /**
-         * Returns the most visible element from the instance's NodeList
+         * Returns the most visible element from the instance's NodeList.
          *
          * @returns {Element} Most visible element.
          */
@@ -78,8 +80,8 @@
          * Returns the visible height of an element.
          *
          * @param {Element} element Element to check the visibility of.
-         * @param viewportHeight
-         * @returns {number} The visible height of the element in pixels or a percentage of the element's total height.
+         * @param {number}  viewportHeight
+         * @returns {number} Visible height of the element in pixels or a percentage of the element's total height.
          */
         getVisibleHeight: function (element, viewportHeight) {
             var rect      = element.getBoundingClientRect(),
@@ -114,20 +116,14 @@
         }
     };
 
-    MostVisible.makeJQueryPlugin = function($) {
+    MostVisible.makeJQueryPlugin = function ($) {
         if (!$) {
             return;
         }
 
         $.fn.mostVisible = function (options) {
-            var instance = new MostVisible(this.get(), options),
-                element  = instance.getMostVisible();
-
-            if (!element) {
-                return $();
-            }
-
-            return $(element);
+            var instance = new MostVisible(this.get(), options);
+            return this.filter(instance.getMostVisible());
         };
     };
 
@@ -137,8 +133,8 @@
     /**
      * Extends obj by adding the properties of all other objects passed to the function.
      *
-     * @param {...object} obj
-     * @returns {object} The extended object.
+     * @param {...Object} obj
+     * @returns {Object} The extended object.
      */
     function extend(obj) {
         for (var i = 1; i < arguments.length; i++) {

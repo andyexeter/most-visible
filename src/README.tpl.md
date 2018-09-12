@@ -49,15 +49,20 @@ $('.my-elements').mostVisible({ percentage: true }).addClass('most-visible');
 
 #### Vanilla JavaScript
 
+You can pass in either a selector string:
 ```js
-// You can pass in either a selector string or NodeList as the first argument
 var element = mostVisible('.elements');
+```
 
-element = mostVisible(document.querySelectorAll('.elements'), {
+Or a NodeList:
+```js
+var element = mostVisible(document.querySelectorAll('.elements'), {
     percentage: true
 });
+```
 
-// as an instance
+Or you can create a new instance:
+```js
 var instance = new mostVisible('.elements');
 instance.getMostVisible();
 ```
