@@ -11,7 +11,8 @@ module.exports = function () {
                 height: 966
             },
             args: [
-                '--user-agent=qunit'
+                '--user-agent=qunit',
+                '--no-sandbox'
             ]
         }
     };
