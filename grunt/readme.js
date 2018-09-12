@@ -4,7 +4,6 @@ module.exports = function (grunt) {
     grunt.registerTask('readme', function () {
         var data = {
             pkg: getProcessedJSON('package.json'),
-            bwr: getProcessedJSON('bower.json'),
             files: {
                 main: getFile('<%= files.main %>'),
                 min: getFile('<%= files.min %>')
