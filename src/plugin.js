@@ -56,7 +56,7 @@ MostVisible.prototype = {
      * Returns the visible height of an element.
      *
      * @param {Element} element Element to check the visibility of.
-     * @param viewportHeight
+     * @param {number} viewportHeight
      * @returns {number} The visible height of the element in pixels or a percentage of the element's total height.
      */
     getVisibleHeight: function (element, viewportHeight) {
@@ -98,12 +98,8 @@ MostVisible.makeJQueryPlugin = function($) {
     }
 
     $.fn.mostVisible = function (options) {
-        var instance = new MostVisible(this.get(), options),
-            element  = instance.getMostVisible();
-
-        return this.filter(function () {
-            return this === element;
-        });
+        var instance = new MostVisible(this.get(), options);
+        return this.filter(instance.getMostVisible());
     };
 };
 
