@@ -1,8 +1,6 @@
 (function () {
     'use strict';
 
-    console.log(navigator.userAgent);
-
     // Inject full or minified version of script
     var src = '../dist/most-visible' + (getUserAgentQuery().min ? '.min' : '') + '.js';
     console.log('');
