@@ -1,0 +1,3 @@
+[submodule "bin/bump_version"]
+	path = bin/bump_version
+	url = git@github.com:andyexeter/bump_version.git
