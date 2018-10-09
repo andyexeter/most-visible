@@ -1,8 +1,12 @@
 language: node_js
 node_js:
   - "8"
+
 before_install:
   - npm install -g grunt-cli
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+
 cache:
   yarn: true
   directories:
@@ -10,8 +14,10 @@ cache:
 env:
   global:
     - NPM_CONFIG_PROGRESS="false"
+
 matrix:
   fast_finish: true
+
 script:
   - grunt dist --verbose
   - grunt jshint --verbose
