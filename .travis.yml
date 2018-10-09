@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "8"
+  
+git:
+  submodules: false
 
 before_install:
   - npm install -g grunt-cli
