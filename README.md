@@ -13,8 +13,8 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.min.js) (1.3kB, 671B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.js)  (4.57kB, 1.4kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.min.js) (1.51kB, 748B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.js)  (5.12kB, 1.52kB gzipped)
 
 #### CDN
 ```html
@@ -95,4 +95,11 @@ mostVisible.defaults.percentage = true;
 
 ## License
 
-Released under the [MIT license](LICENSE)
+The MIT License (MIT)
+Copyright (c) 2019 [The Most Visible authors](https://github.com/andyexeter/most-visible/graphs/contributors)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
