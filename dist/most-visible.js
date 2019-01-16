@@ -48,6 +48,7 @@
      * @namespace
      * @property {object}  defaults             Default options hash.
      * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
+     * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
      */
     MostVisible.defaults = {
         percentage: false,
