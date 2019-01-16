@@ -1,6 +1,6 @@
 {
   "name": "most-visible",
-  "version": "1.3.0",
+  "version": "1.4.0-beta.0",
   "title": "Most Visible",
   "description": "Returns the most visible element from a set of elements.",
   "main": "dist/most-visible.js",
