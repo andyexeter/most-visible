@@ -13,8 +13,8 @@ A JavaScript (and jQuery) plugin which returns the most visible element from a g
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.min.js) (1.51kB, 748B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.js)  (5.12kB, 1.52kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.min.js) (1.35kB, 686B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.3.0/dist/most-visible.js)  (4.91kB, 1.48kB gzipped)
 
 #### CDN
 ```html
@@ -85,7 +85,8 @@ $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options
-`percentage` - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
+`percentage` (boolean) - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
+`offset` (number) - Specify an offset to use when calculating visibility. Useful for e.g fixed headers.
 
 Modify the `mostVisible.defaults` object to change default option values:
 
