@@ -4,8 +4,17 @@ body {
     font-family: sans-serif;
 }
 
+.container {
+    padding: 0 20px;
+}
+
 .header {
+    width: 100%;
     height: 160px;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
     padding-top: 10px;
     box-sizing: border-box;
 }
@@ -14,8 +23,8 @@ body {
     margin-top: 0;
 }
 
-.container {
-    padding: 0 20px;
+#sections {
+    margin-top: 160px;
 }
 
 #sections section .text {

@@ -85,7 +85,8 @@ $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options
-`percentage` - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
+`percentage` (boolean) - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
+`offset` (number) - Specify an offset to use when calculating visibility. Useful for e.g fixed headers.
 
 Modify the `mostVisible.defaults` object to change default option values:
 

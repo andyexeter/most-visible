@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>MostVisible Demo</title>
+    <title>MostVisible Demo - Fixed Header</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div class="header">
     <div class="container">
-        <h1>MostVisible Demo Page</h1>
+        <h1>MostVisible Demo - Fixed Header</h1>
+
         <div>
             <h3>Options:</h3>
             <ul>
@@ -41,9 +42,14 @@
                 checkVisibility();
             });
 
+            var headerHeight = $('.header').height();
+
             function checkVisibility() {
                 var percentage = $('input[name=percentage]').is(':checked');
-                $sections.removeClass('most-visible').mostVisible({percentage: percentage}).addClass('most-visible');
+                $sections.removeClass('most-visible').mostVisible({
+                    percentage: percentage,
+                    offset: headerHeight
+                }).addClass('most-visible');
             }
         });
     </script>

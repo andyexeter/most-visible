@@ -1,5 +1,5 @@
 /**
- * Most Visible v1.3.0
+ * Most Visible v1.4.0
  *
  * @author Andy Palmer <andy@andypalmer.me>
  * @license MIT
@@ -48,9 +48,11 @@
      * @namespace
      * @property {object}  defaults             Default options hash.
      * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
+     * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
      */
     MostVisible.defaults = {
-        percentage: false
+        percentage: false,
+        offset: 0
     };
 
     MostVisible.prototype = {
@@ -65,7 +67,7 @@
                 maxVisible     = 0;
 
             for (var i = 0; i < this.elements.length; i++) {
-                var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight);
+                var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight, this.options.offset);
 
                 if (currentVisible > maxVisible) {
                     maxVisible = currentVisible;
@@ -84,13 +86,15 @@
          * @returns {number} Visible height of the element in pixels or a percentage of the element's total height.
          */
         getVisibleHeight: function (element, viewportHeight) {
-            var rect      = element.getBoundingClientRect(),
-                height    = rect.bottom - rect.top,
-                visible   = {
-                    top: rect.top >= 0 && rect.top < viewportHeight,
-                    bottom: rect.bottom > 0 && rect.bottom < viewportHeight
+            var rect             = element.getBoundingClientRect(),
+                rectTopOffset    = rect.top - this.options.offset,
+                rectBottomOffset = rect.bottom - this.options.offset,
+                height           = rect.bottom - rect.top,
+                visible          = {
+                    top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
+                    bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight
                 },
-                visiblePx = 0;
+                visiblePx        = 0;
 
             if (visible.top && visible.bottom) {
                 // Whole element is visible
@@ -98,9 +102,9 @@
             } else if (visible.top) {
                 visiblePx = viewportHeight - rect.top;
             } else if (visible.bottom) {
-                visiblePx = rect.bottom;
-            } else if (height > viewportHeight && rect.top < 0) {
-                var absTop = Math.abs(rect.top);
+                visiblePx = rectBottomOffset;
+            } else if (height > viewportHeight && rectTopOffset < 0) {
+                var absTop = Math.abs(rectTopOffset);
 
                 if (absTop < height) {
                     // Part of the element is visible
