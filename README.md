@@ -86,8 +86,6 @@ $('.my-elements').removeClass('active').mostVisible().addClass('active');
 
 ## Options
 
-### 4. Options
-
 | Option            | Type              | Description                                                                                                | Default         |
 |-------------------|-------------------|------------------------------------------------------------------------------------------------------------|-----------------|
 | percentage        | `boolean`         | Whether to calculate the visibility of an element as a percentage of its height                            | `false`         |
