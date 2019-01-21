@@ -44,7 +44,7 @@ The plugin will automatically be added to any global (window) version of jQuery:
 $('.my-elements').mostVisible().addClass('most-visible');
 
 // with options
-$('.my-elements').mostVisible({ percentage: true }).addClass('most-visible');
+$('.my-elements').mostVisible({ percentage: true, offset: 160 }).addClass('most-visible');
 ```
 
 #### Vanilla JavaScript
@@ -85,13 +85,19 @@ $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options
-`percentage` (boolean) - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
-`offset` (number) - Specify an offset to use when calculating visibility. Useful for e.g fixed headers.
+
+### 4. Options
+
+| Option            | Type              | Description                                                                                                | Default         |
+|-------------------|-------------------|------------------------------------------------------------------------------------------------------------|-----------------|
+| percentage        | `boolean`         | Whether to calculate the visibility of an element as a percentage of its height                            | `false`         |
+| offset            | `number`          | an offset to use when calculating visibility. Useful for e.g fixed headers                                 | `0`             |
 
 Modify the `mostVisible.defaults` object to change default option values:
 
 ```js
 mostVisible.defaults.percentage = true;
+mostVisible.defaults.offset = 160;
 ```
 
 ## License
