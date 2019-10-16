@@ -45,7 +45,7 @@ MostVisible.prototype = {
             maxVisible     = 0;
 
         for (var i = 0; i < this.elements.length; i++) {
-            var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight, this.options.offset);
+            var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight);
 
             if (currentVisible > maxVisible) {
                 maxVisible = currentVisible;
