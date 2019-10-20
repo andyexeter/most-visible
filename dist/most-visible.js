@@ -62,20 +62,14 @@
          * @returns {Element} Most visible element.
          */
         getMostVisible: function () {
-            var element        = null,
-                viewportHeight = document.documentElement.clientHeight,
-                maxVisible     = 0;
+            var viewportHeight = document.documentElement.clientHeight;
 
-            for (var i = 0; i < this.elements.length; i++) {
-                var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight, this.options.offset);
+            var _this = this;
+            return Array.prototype.reduce.call(this.elements, function (carry, element) {
+                var value = _this.getVisibleHeight(element, viewportHeight);
 
-                if (currentVisible > maxVisible) {
-                    maxVisible = currentVisible;
-                    element = this.elements[i];
-                }
-            }
-
-            return element;
+                return value > carry[0] ? [value, element] : carry;
+            }, [0, null])[1];
         },
 
         /**
