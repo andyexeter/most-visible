@@ -3,8 +3,7 @@ module.exports = {
         options: {
             plugins: [
                 ['@babel/plugin-transform-arrow-functions'],
-                ['@babel/plugin-transform-block-scoping'],
-                ['@babel/plugin-transform-for-of', {loose: true}],
+                ['@babel/plugin-transform-block-scoping']
             ]
         },
         files: {

@@ -10,7 +10,6 @@
     "@babel/core": "^7.7.4",
     "@babel/plugin-transform-arrow-functions": "^7.7.4",
     "@babel/plugin-transform-block-scoping": "^7.7.4",
-    "@babel/plugin-transform-for-of": "^7.7.4",
     "grunt": "^1.0.3",
     "grunt-babel": "^8.0.0",
     "grunt-contrib-copy": "^1.0.0",
