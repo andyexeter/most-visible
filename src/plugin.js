@@ -4,7 +4,7 @@
  * MostVisible constructor
  *
  * @param {NodeList|string} elements
- * @param {Object} options
+ * @param {{}} options
  * @constructor
  */
 function MostVisible(elements, options) {
@@ -24,7 +24,7 @@ function MostVisible(elements, options) {
  * MostVisible default options
  *
  * @namespace
- * @property {object}  defaults             Default options hash.
+ * @property {{}}      defaults             Default options hash.
  * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
  * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
  */
@@ -37,7 +37,7 @@ MostVisible.prototype = {
     /**
      * Returns the most visible element from the instance's NodeList.
      *
-     * @returns {Element} Most visible element.
+     * @returns {HTMLElement} Most visible element.
      */
     getMostVisible: function () {
         return Array.prototype.reduce.call(this.elements, (carry, element) => {
@@ -50,9 +50,9 @@ MostVisible.prototype = {
     /**
      * Returns the visible height of an element.
      *
-     * @param {Element} element Element to check the visibility of.
-     * @param {number}  viewportHeight
-     * @returns {number} Visible height of the element in pixels or a percentage of the element's total height.
+     * @param {HTMLElement} element Element to check the visibility of.
+     * @param {number}      viewportHeight
+     * @returns {number}    Visible height of the element in pixels or a percentage of the element's total height.
      */
     getVisibleHeight: function (element, viewportHeight) {
         const rect             = element.getBoundingClientRect(),
@@ -107,12 +107,12 @@ MostVisible.makeJQueryPlugin(window.jQuery);
 /**
  * Extends obj by adding the properties of all other objects passed to the function.
  *
- * @param {...Object} obj
- * @returns {Object} The extended object.
+ * @param {...{}} obj
+ * @returns {{}} The extended object.
  */
 function extend(obj) {
     for (let i = 1; i < arguments.length; i++) {
-        for (let key in arguments[i]) {
+        for (const key in arguments[i]) {
             obj[key] = arguments[i][key];
         }
     }
@@ -120,5 +120,4 @@ function extend(obj) {
     return obj;
 }
 
-//noinspection JSAnnotator
 return MostVisible;

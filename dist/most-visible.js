@@ -26,7 +26,7 @@
    * MostVisible constructor
    *
    * @param {NodeList|string} elements
-   * @param {Object} options
+   * @param {{}} options
    * @constructor
    */
 
@@ -46,7 +46,7 @@
    * MostVisible default options
    *
    * @namespace
-   * @property {object}  defaults             Default options hash.
+   * @property {{}}      defaults             Default options hash.
    * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
    * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
    */
@@ -60,7 +60,7 @@
     /**
      * Returns the most visible element from the instance's NodeList.
      *
-     * @returns {Element} Most visible element.
+     * @returns {HTMLElement} Most visible element.
      */
     getMostVisible: function () {
       var _this = this;
@@ -75,9 +75,9 @@
     /**
      * Returns the visible height of an element.
      *
-     * @param {Element} element Element to check the visibility of.
-     * @param {number}  viewportHeight
-     * @returns {number} Visible height of the element in pixels or a percentage of the element's total height.
+     * @param {HTMLElement} element Element to check the visibility of.
+     * @param {number}      viewportHeight
+     * @returns {number}    Visible height of the element in pixels or a percentage of the element's total height.
      */
     getVisibleHeight: function (element, viewportHeight) {
       var rect = element.getBoundingClientRect(),
@@ -130,8 +130,8 @@
   /**
    * Extends obj by adding the properties of all other objects passed to the function.
    *
-   * @param {...Object} obj
-   * @returns {Object} The extended object.
+   * @param {...{}} obj
+   * @returns {{}} The extended object.
    */
 
   function extend(obj) {
@@ -142,8 +142,7 @@
     }
 
     return obj;
-  } //noinspection JSAnnotator
-
+  }
 
   return MostVisible;
 });
