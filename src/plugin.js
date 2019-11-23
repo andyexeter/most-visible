@@ -40,11 +40,8 @@ MostVisible.prototype = {
      * @returns {Element} Most visible element.
      */
     getMostVisible: function () {
-        var viewportHeight = document.documentElement.clientHeight;
-
-        var _this = this;
-        return Array.prototype.reduce.call(this.elements, function (carry, element) {
-            var value = _this.getVisibleHeight(element, viewportHeight);
+        return Array.prototype.reduce.call(this.elements, (carry, element) => {
+            const value = this.getVisibleHeight(element, document.documentElement.clientHeight);
 
             return value > carry[0] ? [value, element] : carry;
         }, [0, null])[1];
@@ -58,15 +55,16 @@ MostVisible.prototype = {
      * @returns {number} Visible height of the element in pixels or a percentage of the element's total height.
      */
     getVisibleHeight: function (element, viewportHeight) {
-        var rect             = element.getBoundingClientRect(),
-            rectTopOffset    = rect.top - this.options.offset,
-            rectBottomOffset = rect.bottom - this.options.offset,
-            height           = rect.bottom - rect.top,
-            visible          = {
-                top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
-                bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight
-            },
-            visiblePx        = 0;
+        const rect             = element.getBoundingClientRect(),
+              rectTopOffset    = rect.top - this.options.offset,
+              rectBottomOffset = rect.bottom - this.options.offset,
+              height           = rect.bottom - rect.top,
+              visible          = {
+                  top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
+                  bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight
+              };
+
+        let visiblePx = 0;
 
         if (visible.top && visible.bottom) {
             // Whole element is visible
@@ -76,7 +74,7 @@ MostVisible.prototype = {
         } else if (visible.bottom) {
             visiblePx = rectBottomOffset;
         } else if (height > viewportHeight && rectTopOffset < 0) {
-            var absTop = Math.abs(rectTopOffset);
+            const absTop = Math.abs(rectTopOffset);
 
             if (absTop < height) {
                 // Part of the element is visible
@@ -92,13 +90,13 @@ MostVisible.prototype = {
     }
 };
 
-MostVisible.makeJQueryPlugin = function ($) {
+MostVisible.makeJQueryPlugin = $ => {
     if (!$) {
         return;
     }
 
     $.fn.mostVisible = function (options) {
-        var instance = new MostVisible(this.get(), options);
+        const instance = new MostVisible(this.get(), options);
         return this.filter(instance.getMostVisible());
     };
 };
@@ -113,11 +111,9 @@ MostVisible.makeJQueryPlugin(window.jQuery);
  * @returns {Object} The extended object.
  */
 function extend(obj) {
-    for (var i = 1; i < arguments.length; i++) {
-        for (var key in arguments[i]) {
-            if (arguments[i].hasOwnProperty(key)) {
-                obj[key] = arguments[i][key];
-            }
+    for (let i = 1; i < arguments.length; i++) {
+        for (let key in arguments[i]) {
+            obj[key] = arguments[i][key];
         }
     }
 
