@@ -8,7 +8,7 @@
 
 <%= pkg.description %>
 
-A JavaScript (and jQuery) plugin which returns the most visible element from a given set.
+A JavaScript module and jQuery plugin which returns the most visible element from a given set.
 
 ## Installation
 
@@ -44,7 +44,7 @@ The plugin will automatically be added to any global (window) version of jQuery:
 $('.my-elements').mostVisible().addClass('most-visible');
 
 // with options
-$('.my-elements').mostVisible({ percentage: true, offset: 160 }).addClass('most-visible');
+$('.my-elements').mostVisible({percentage: true, offset: 160}).addClass('most-visible');
 ```
 
 #### Vanilla JavaScript
@@ -85,11 +85,8 @@ $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options
-
-| Option            | Type              | Description                                                                                                | Default         |
-|-------------------|-------------------|------------------------------------------------------------------------------------------------------------|-----------------|
-| percentage        | `boolean`         | Whether to calculate the visibility of an element as a percentage of its height                            | `false`         |
-| offset            | `number`          | A pixel offset to use when calculating visibility. Useful for e.g fixed headers                            | `0`             |
+`percentage` (boolean) - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
+`offset` (number) - Specify an offset to use when calculating visibility. Useful for e.g fixed headers.
 
 Modify the `mostVisible.defaults` object to change default option values:
 
@@ -100,11 +97,4 @@ mostVisible.defaults.offset = 160;
 
 ## License
 
-The MIT License (MIT)
-Copyright (c) <%= grunt.template.today("yyyy") %> [The <%= pkg.title %> authors](<%= pkg.repository.url %>/graphs/contributors)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Released under the [MIT license](LICENSE)

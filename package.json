@@ -1,13 +1,17 @@
 {
   "name": "most-visible",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "title": "Most Visible",
   "description": "Returns the most visible element from a set of elements.",
   "main": "dist/most-visible.js",
   "author": "Andy Palmer <andy@andypalmer.me>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-arrow-functions": "^7.7.4",
+    "@babel/plugin-transform-block-scoping": "^7.7.4",
     "grunt": "^1.0.3",
+    "grunt-babel": "^8.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-qunit": "^3.0.1",

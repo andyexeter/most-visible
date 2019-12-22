@@ -4,7 +4,7 @@
  * MostVisible constructor
  *
  * @param {NodeList|string} elements
- * @param {Object} options
+ * @param {{}} options
  * @constructor
  */
 function MostVisible(elements, options) {
@@ -24,7 +24,7 @@ function MostVisible(elements, options) {
  * MostVisible default options
  *
  * @namespace
- * @property {object}  defaults             Default options hash.
+ * @property {{}}      defaults             Default options hash.
  * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
  * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
  */
@@ -37,42 +37,35 @@ MostVisible.prototype = {
     /**
      * Returns the most visible element from the instance's NodeList.
      *
-     * @returns {Element} Most visible element.
+     * @returns {HTMLElement} Most visible element.
      */
     getMostVisible: function () {
-        var element        = null,
-            viewportHeight = document.documentElement.clientHeight,
-            maxVisible     = 0;
+        const viewportHeight = document.documentElement.clientHeight;
+        return Array.prototype.reduce.call(this.elements, (carry, element) => {
+            const value = this.getVisibleHeight(element, viewportHeight);
 
-        for (var i = 0; i < this.elements.length; i++) {
-            var currentVisible = this.getVisibleHeight(this.elements[i], viewportHeight);
-
-            if (currentVisible > maxVisible) {
-                maxVisible = currentVisible;
-                element = this.elements[i];
-            }
-        }
-
-        return element;
+            return value > carry[0] ? [value, element] : carry;
+        }, [0, null])[1];
     },
 
     /**
      * Returns the visible height of an element.
      *
-     * @param {Element} element Element to check the visibility of.
-     * @param {number}  viewportHeight
-     * @returns {number} Visible height of the element in pixels or a percentage of the element's total height.
+     * @param {HTMLElement} element Element to check the visibility of.
+     * @param {number}      viewportHeight
+     * @returns {number}    Visible height of the element in pixels or a percentage of the element's total height.
      */
     getVisibleHeight: function (element, viewportHeight) {
-        var rect             = element.getBoundingClientRect(),
-            rectTopOffset    = rect.top - this.options.offset,
-            rectBottomOffset = rect.bottom - this.options.offset,
-            height           = rect.bottom - rect.top,
-            visible          = {
-                top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
-                bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight
-            },
-            visiblePx        = 0;
+        const rect             = element.getBoundingClientRect(),
+              rectTopOffset    = rect.top - this.options.offset,
+              rectBottomOffset = rect.bottom - this.options.offset,
+              height           = rect.bottom - rect.top,
+              visible          = {
+                  top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
+                  bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight
+              };
+
+        let visiblePx = 0;
 
         if (visible.top && visible.bottom) {
             // Whole element is visible
@@ -82,7 +75,7 @@ MostVisible.prototype = {
         } else if (visible.bottom) {
             visiblePx = rectBottomOffset;
         } else if (height > viewportHeight && rectTopOffset < 0) {
-            var absTop = Math.abs(rectTopOffset);
+            const absTop = Math.abs(rectTopOffset);
 
             if (absTop < height) {
                 // Part of the element is visible
@@ -98,13 +91,13 @@ MostVisible.prototype = {
     }
 };
 
-MostVisible.makeJQueryPlugin = function ($) {
+MostVisible.makeJQueryPlugin = $ => {
     if (!$) {
         return;
     }
 
     $.fn.mostVisible = function (options) {
-        var instance = new MostVisible(this.get(), options);
+        const instance = new MostVisible(this.get(), options);
         return this.filter(instance.getMostVisible());
     };
 };
@@ -115,20 +108,17 @@ MostVisible.makeJQueryPlugin(window.jQuery);
 /**
  * Extends obj by adding the properties of all other objects passed to the function.
  *
- * @param {...Object} obj
- * @returns {Object} The extended object.
+ * @param {...{}} obj
+ * @returns {{}} The extended object.
  */
 function extend(obj) {
-    for (var i = 1; i < arguments.length; i++) {
-        for (var key in arguments[i]) {
-            if (arguments[i].hasOwnProperty(key)) {
-                obj[key] = arguments[i][key];
-            }
+    for (let i = 1; i < arguments.length; i++) {
+        for (const key in arguments[i]) {
+            obj[key] = arguments[i][key];
         }
     }
 
     return obj;
 }
 
-//noinspection JSAnnotator
 return MostVisible;
