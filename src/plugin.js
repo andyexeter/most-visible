@@ -40,8 +40,9 @@ MostVisible.prototype = {
      * @returns {HTMLElement} Most visible element.
      */
     getMostVisible: function () {
+        const viewportHeight = document.documentElement.clientHeight;
         return Array.prototype.reduce.call(this.elements, (carry, element) => {
-            const value = this.getVisibleHeight(element, document.documentElement.clientHeight);
+            const value = this.getVisibleHeight(element, viewportHeight);
 
             return value > carry[0] ? [value, element] : carry;
         }, [0, null])[1];

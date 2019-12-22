@@ -65,8 +65,9 @@
     getMostVisible: function () {
       var _this = this;
 
+      var viewportHeight = document.documentElement.clientHeight;
       return Array.prototype.reduce.call(this.elements, function (carry, element) {
-        var value = _this.getVisibleHeight(element, document.documentElement.clientHeight);
+        var value = _this.getVisibleHeight(element, viewportHeight);
 
         return value > carry[0] ? [value, element] : carry;
       }, [0, null])[1];
