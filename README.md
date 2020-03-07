@@ -6,8 +6,6 @@
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
 [![devDependency Status](https://img.shields.io/david/dev/andyexeter/most-visible.svg)](https://david-dm.org/andyexeter/most-visible#info=devDependencies)
 
-Returns the most visible element from a set of elements.
-
 A JavaScript module and jQuery plugin which returns the most visible element from a given set.
 
 ## Installation
@@ -74,7 +72,7 @@ var mostVisible = require('most-visible');
 mostVisible('.elements');
 ```
 
-To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJQueryPlugin`: 
+To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJQueryPlugin`:
 ```js
 var $ = require('jquery');
 var mostVisible = require('most-visible');
@@ -85,8 +83,10 @@ $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
 
 ## Options
-`percentage` (boolean) - Whether to calculate the visibility of an element as a percentage of its height. Defaults to `false`.
-`offset` (number) - Specify an offset to use when calculating visibility. Useful for e.g fixed headers.
+| Option         | Type               | Description                                                                                  | Default           |
+|----------------|--------------------|----------------------------------------------------------------------------------------------|-------------------|
+| percentage     | `boolean`          | Whether to calculate the visibility of an element as a percentage of its height              | `false`           |                                                                     | `''`              |
+| offset         | `number`           | A pixel offset to use when calculating visibility. Useful for e.g fixed headers.             | `0`               |
 
 Modify the `mostVisible.defaults` object to change default option values:
 

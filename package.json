@@ -2,7 +2,7 @@
   "name": "most-visible",
   "version": "1.5.0",
   "title": "Most Visible",
-  "description": "Returns the most visible element from a set of elements.",
+  "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
   "main": "dist/most-visible.js",
   "author": "Andy Palmer <andy@andypalmer.me>",
   "license": "MIT",
