@@ -1,14 +1,6 @@
 language: node_js
 node_js:
-  - "8"
-  
-git:
-  submodules: false
-
-before_install:
-  - npm install -g grunt-cli
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive
+  - "14"
 
 cache:
   yarn: true
@@ -22,6 +14,6 @@ matrix:
   fast_finish: true
 
 script:
-  - grunt dist --verbose
+  - yarn run eslint js/
   - grunt jshint --verbose
   - grunt test --verbose

@@ -8,13 +8,13 @@
  * @returns {number}    Visible height of the element in pixels or a percentage of the element's total height.
  */
 export default function getVisibleHeight(element, offset, percentage) {
-    const viewportHeight = document.documentElement.clientHeight,
-        rect = element.getBoundingClientRect(),
-        rectTopOffset = rect.top - offset,
-        rectBottomOffset = rect.bottom - offset,
-        height = rect.bottom - rect.top,
-        visibleTop = rectTopOffset >= 0 && rectTopOffset < viewportHeight,
-        visibleBottom = rectBottomOffset > 0 && rectBottomOffset < viewportHeight;
+    const viewportHeight = document.documentElement.clientHeight;
+    const rect = element.getBoundingClientRect();
+    const rectTopOffset = rect.top - offset;
+    const rectBottomOffset = rect.bottom - offset;
+    const height = rect.bottom - rect.top;
+    const visibleTop = rectTopOffset >= 0 && rectTopOffset < viewportHeight;
+    const visibleBottom = rectBottomOffset > 0 && rectBottomOffset < viewportHeight;
 
     const visiblePx = (() => {
         if (visibleTop) {

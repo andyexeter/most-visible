@@ -11,8 +11,13 @@
         "@babel/preset-env": "^7.16.0",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-node-resolve": "^13.0.6",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.25.2",
         "jquery": "^3.6.0",
+        "node-qunit-puppeteer": "^2.1.0",
         "prettier": "^2.4.1",
+        "puppeteer": "^10.4.0",
         "qunit": "^2.17.2",
         "rollup": "^2.58.3",
         "rollup-plugin-terser": "^7.0.2"
@@ -34,10 +39,13 @@
     ],
     "scripts": {
         "build": "rollup --config",
-        "build-readme": "node bin/build-readme.js"
+        "build-readme": "node bin/build-readme.js",
+        "test": "node bin/test.js",
+        "lint": "eslint js/ test/ bin/",
+        "prettify": "prettier js/ test/ bin/"
     },
     "prettier": {
-        "trailingComma": "none",
-        "printWidth": 160
+        "printWidth": 160,
+        "singleQuote": true
     }
 }
