@@ -1,41 +1,38 @@
 {
-  "name": "most-visible",
-  "version": "1.5.0",
-  "title": "Most Visible",
-  "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
-  "main": "dist/most-visible.js",
-  "author": "Andy Palmer <andy@andypalmer.me>",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-transform-arrow-functions": "^7.7.4",
-    "@babel/plugin-transform-block-scoping": "^7.7.4",
-    "grunt": "^1.0.3",
-    "grunt-babel": "^8.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-qunit": "^3.0.1",
-    "grunt-contrib-uglify": "^4.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-includes": "^1.1.0",
-    "jquery": "^3.3.1",
-    "load-grunt-config": "^3.0.1",
-    "lodash": "^4.17.15",
-    "qunit": "^2.6.2"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andyexeter/most-visible"
-  },
-  "keywords": [
-    "jquery",
-    "jquery-plugin",
-    "ecosystem:jquery",
-    "visibility",
-    "viewport"
-  ]
+    "name": "most-visible",
+    "version": "1.5.0",
+    "title": "Most Visible",
+    "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
+    "main": "dist/most-visible.js",
+    "author": "Andy Palmer <andy@andypalmer.me>",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-node-resolve": "^13.0.6",
+        "jquery": "^3.6.0",
+        "qunit": "^2.17.2",
+        "rollup": "^2.58.3",
+        "rollup-plugin-terser": "^7.0.2"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andyexeter/most-visible"
+    },
+    "keywords": [
+        "jquery",
+        "jquery-plugin",
+        "ecosystem:jquery",
+        "visibility",
+        "viewport"
+    ],
+    "scripts": {
+        "build": "rollup --config",
+        "build-readme": "node bin/build-readme.js"
+    }
 }

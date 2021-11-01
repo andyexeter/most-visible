@@ -10,12 +10,10 @@
     // Inject tests
     [
         'global-attached',
-        'defaults',
+        //'defaults',
         'jquery',
         'fn-call',
         'selector',
-        'instance',
-        'get-visible-height',
         'correct-element',
         'correct-element-percentage'
     ].forEach(function (value) {

@@ -11,8 +11,8 @@ A JavaScript module and jQuery plugin which returns the most visible element fro
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js) (1.25kB, 668B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.js)  (4.08kB, 1.43kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js) (694B, 432B gzipped)
+* [most-visible.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.js)  (3kB, 1023B gzipped)
 
 #### CDN
 ```html
@@ -49,35 +49,29 @@ $('.my-elements').mostVisible({percentage: true, offset: 160}).addClass('most-vi
 
 You can pass in either a selector string:
 ```js
-var element = mostVisible('.elements');
+const element = mostVisible('.my-elements');
 ```
 
 Or a NodeList:
 ```js
-var element = mostVisible(document.querySelectorAll('.elements'), {
-    percentage: true
-});
+const element = mostVisible(document.querySelectorAll('.my-elements'));
 ```
 
-Or you can create a new instance:
+#### Webpack etc.
+
 ```js
-var instance = new mostVisible('.elements');
-instance.getMostVisible();
+import mostVisible from 'most-visible';
+
+const element = mostVisible('.my-elements');
 ```
 
-#### Webpack and Browserify
+To attach the jQuery plugin to a non-global version of jQuery you must call `.makejQueryPlugin`:
 
 ```js
-var mostVisible = require('most-visible');
-mostVisible('.elements');
-```
+import $ from 'jquery';
+import {mostVisible, makejQueryPlugin} from 'most-visible';
 
-To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJQueryPlugin`:
-```js
-var $ = require('jquery');
-var mostVisible = require('most-visible');
-
-mostVisible.makeJQueryPlugin($);
+makejQueryPlugin($, mostVisible);
 
 $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
