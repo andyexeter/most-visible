@@ -11,14 +11,14 @@ A JavaScript module and jQuery plugin which returns the most visible element fro
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js)
-* [most-visible.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.js)
+* [most-visible.min.js](https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.min.js)
+* [most-visible.js](https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.js)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js"></script>
+<script src="https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/most-visible@1.5.0/dist/most-visible.js"></script>
+<script src="https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.js"></script>
 ```
 
 #### Package Managers

@@ -1,6 +1,6 @@
 {
     "name": "most-visible",
-    "version": "1.5.0",
+    "version": "2.0.0-beta.2",
     "title": "Most Visible",
     "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
     "main": "dist/most-visible.js",
