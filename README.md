@@ -1,6 +1,7 @@
 # Most Visible
 
-[![Build status](https://img.shields.io/travis/andyexeter/most-visible.svg)](https://travis-ci.org/andyexeter/most-visible)
+[![License](https://img.shields.io/npm/l/most-visible)](https://github.com/andyexeter/most-visible/blob/master/LICENSE)
+[![Build status](https://github.com/andyexeter/most-visible/actions/workflows/build.yaml/badge.svg)](https://github.com/andyexeter/most-visible/actions/workflows/build.yaml)
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
 ![Size](https://img.shields.io/bundlephobia/min/most-visible)
 ![Size](https://img.shields.io/bundlephobia/minzip/most-visible)
