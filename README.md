@@ -2,7 +2,8 @@
 
 # Most Visible v1.5.0
 
-[![Build status](https://img.shields.io/travis/andyexeter/most-visible.svg)](https://travis-ci.org/andyexeter/most-visible)
+[![License](https://img.shields.io/npm/l/most-visible)](https://github.com/andyexeter/most-visible/blob/master/LICENSE)
+[![Build status](https://github.com/andyexeter/most-visible/actions/workflows/build.yaml/badge.svg)](https://github.com/andyexeter/most-visible/actions/workflows/build.yaml)
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
 [![devDependency Status](https://img.shields.io/david/dev/andyexeter/most-visible.svg)](https://david-dm.org/andyexeter/most-visible#info=devDependencies)
 
