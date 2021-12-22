@@ -3,8 +3,8 @@
 [![License](https://img.shields.io/npm/l/most-visible)](https://github.com/andyexeter/most-visible/blob/master/LICENSE)
 [![Build status](https://github.com/andyexeter/most-visible/actions/workflows/ci.yaml/badge.svg)](https://github.com/andyexeter/most-visible/actions/workflows/ci.yaml)
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
-![Size](https://img.shields.io/bundlephobia/min/most-visible)
-![Size](https://img.shields.io/bundlephobia/minzip/most-visible)
+![Size](https://img.shields.io/bundlephobia/min/most-visible@2.0.0)
+![Size](https://img.shields.io/bundlephobia/minzip/most-visible@2.0.0)
 
 A JavaScript module and jQuery plugin which returns the most visible element from a given set.
 
