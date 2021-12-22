@@ -1,41 +1,55 @@
 {
-  "name": "most-visible",
-  "version": "1.5.0",
-  "title": "Most Visible",
-  "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
-  "main": "dist/most-visible.js",
-  "author": "Andy Palmer <andy@andypalmer.me>",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-transform-arrow-functions": "^7.7.4",
-    "@babel/plugin-transform-block-scoping": "^7.7.4",
-    "grunt": "^1.0.3",
-    "grunt-babel": "^8.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^3.0.0",
-    "grunt-contrib-qunit": "^5.0.1",
-    "grunt-contrib-uglify": "^5.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-includes": "^1.1.0",
-    "jquery": "^3.3.1",
-    "load-grunt-config": "^4.0.0",
-    "lodash": "^4.17.15",
-    "qunit": "^2.6.2"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andyexeter/most-visible"
-  },
-  "keywords": [
-    "jquery",
-    "jquery-plugin",
-    "ecosystem:jquery",
-    "visibility",
-    "viewport"
-  ]
+    "name": "most-visible",
+    "version": "2.0.0-beta.2",
+    "title": "Most Visible",
+    "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
+    "main": "dist/most-visible.js",
+    "module": "js/most-visible.js",
+    "type": "module",
+    "author": "Andy Palmer <andy@andypalmer.me>",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-node-resolve": "^13.0.6",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.25.2",
+        "jquery": "^3.6.0",
+        "node-qunit-puppeteer": "^2.1.0",
+        "prettier": "^2.4.1",
+        "puppeteer": "^10.4.0",
+        "qunit": "^2.17.2",
+        "rollup": "^2.58.3",
+        "rollup-plugin-terser": "^7.0.2"
+    },
+    "files": [
+        "dist",
+        "js",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andyexeter/most-visible"
+    },
+    "keywords": [
+        "jquery",
+        "jquery-plugin",
+        "ecosystem:jquery",
+        "visibility",
+        "viewport"
+    ],
+    "scripts": {
+        "build": "rollup --config",
+        "test": "node bin/test.cjs",
+        "test-module": "qunit test/module.js",
+        "lint": "eslint js/ test/",
+        "prettier": "prettier js/ test/ bin/",
+        "ci": "rollup --config && prettier js/ test/ bin/ --check && eslint js/ test/ && node bin/test.cjs && qunit test/module.js"
+    },
+    "prettier": {
+        "printWidth": 160,
+        "singleQuote": true
+    }
 }

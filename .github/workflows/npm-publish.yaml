@@ -6,26 +6,28 @@ on:
       - 'v*'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: 'ubuntu-20.04'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 14
       - run: yarn install
+      - run: yarn prettier --check
+      - run: yarn lint
       - run: yarn test
+      - run: yarn test-module
 
   publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
+    needs: test
+    runs-on: 'ubuntu-20.04'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: yarn install
       - run: yarn publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

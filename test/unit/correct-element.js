@@ -1,12 +1,10 @@
 /* global QUnit:false, $:false */
-QUnit.test('when scrolled to bottom, last element should be most visible', function (assert) {
-    'use strict';
+QUnit.test('when scrolled to bottom, last element should be most visible', (assert) => {
+    const done = assert.async();
 
-    var done = assert.async();
-
-    $(function () {
-        var $elements = $('#elements').find('.element'),
-            $element  = $elements.eq(-1);
+    $(() => {
+        const $elements = $('#elements').find('.element');
+        const $element = $elements.eq(-1);
 
         window.scrollTo(0, document.documentElement.scrollHeight);
 
@@ -16,5 +14,4 @@ QUnit.test('when scrolled to bottom, last element should be most visible', funct
 
         done();
     });
-
 });

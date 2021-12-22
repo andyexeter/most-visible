@@ -1,9 +1,6 @@
 /* global QUnit:false, mostVisible:false */
-QUnit.test('when passing a selector string, instance.elements should still be a NodeList', function (assert) {
-    'use strict';
+QUnit.test('when passing a selector string, an HTMLElement should still be returned', (assert) => {
+    const element = mostVisible('#elements .element');
 
-    var instance = new mostVisible('#elements .element');
-
-    assert.ok(instance.elements instanceof NodeList, 'we have a NodeList.');
-
+    assert.ok(element instanceof HTMLElement, 'we have a HTMLElement.');
 });

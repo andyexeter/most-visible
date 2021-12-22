@@ -1,25 +1,24 @@
-[//]: # (Do not edit README.md as it is automatically generated from src/README.tpl.md)
-
-# Most Visible v1.5.0
+# Most Visible
 
 [![License](https://img.shields.io/npm/l/most-visible)](https://github.com/andyexeter/most-visible/blob/master/LICENSE)
 [![Build status](https://github.com/andyexeter/most-visible/actions/workflows/build.yaml/badge.svg)](https://github.com/andyexeter/most-visible/actions/workflows/build.yaml)
 [![npm version](https://img.shields.io/npm/v/most-visible.svg)](https://www.npmjs.com/package/most-visible)
-[![devDependency Status](https://img.shields.io/david/dev/andyexeter/most-visible.svg)](https://david-dm.org/andyexeter/most-visible#info=devDependencies)
+![Size](https://img.shields.io/bundlephobia/min/most-visible)
+![Size](https://img.shields.io/bundlephobia/minzip/most-visible)
 
 A JavaScript module and jQuery plugin which returns the most visible element from a given set.
 
 ## Installation
 
 #### Download
-* [most-visible.min.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js) (1.3kB, 678B gzipped)
-* [most-visible.js](https://unpkg.com/most-visible@1.5.0/dist/most-visible.js)  (4.08kB, 1.43kB gzipped)
+* [most-visible.min.js](https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.min.js)
+* [most-visible.js](https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.js)
 
 #### CDN
 ```html
-<script src="https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js"></script>
+<script src="https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/most-visible@1.5.0/dist/most-visible.js"></script>
+<script src="https://unpkg.com/most-visible@2.0.0-beta.2/dist/most-visible.js"></script>
 ```
 
 #### Package Managers
@@ -34,6 +33,8 @@ $ npm install most-visible --save
 ```
 
 ## Usage
+
+### Browser
 
 #### jQuery
 
@@ -50,35 +51,29 @@ $('.my-elements').mostVisible({percentage: true, offset: 160}).addClass('most-vi
 
 You can pass in either a selector string:
 ```js
-var element = mostVisible('.elements');
+const element = mostVisible('.my-elements');
 ```
 
 Or a NodeList:
 ```js
-var element = mostVisible(document.querySelectorAll('.elements'), {
-    percentage: true
-});
+const element = mostVisible(document.querySelectorAll('.my-elements'));
 ```
 
-Or you can create a new instance:
+### Webpack etc.
+
 ```js
-var instance = new mostVisible('.elements');
-instance.getMostVisible();
+import mostVisible from 'most-visible';
+
+const element = mostVisible('.my-elements');
 ```
 
-#### Webpack and Browserify
+To attach the jQuery plugin to a non-global version of jQuery you must call `.makejQueryPlugin`:
 
 ```js
-var mostVisible = require('most-visible');
-mostVisible('.elements');
-```
+import $ from 'jquery';
+import {mostVisible, makejQueryPlugin} from 'most-visible';
 
-To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJQueryPlugin`:
-```js
-var $ = require('jquery');
-var mostVisible = require('most-visible');
-
-mostVisible.makeJQueryPlugin($);
+makejQueryPlugin($, mostVisible);
 
 $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
