@@ -4,6 +4,8 @@
     "title": "Most Visible",
     "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
     "main": "dist/most-visible.js",
+    "module": "js/most-visible.js",
+    "type": "module",
     "author": "Andy Palmer <andy@andypalmer.me>",
     "license": "MIT",
     "devDependencies": {
@@ -24,6 +26,7 @@
     },
     "files": [
         "dist",
+        "js",
         "README.md"
     ],
     "repository": {
@@ -39,10 +42,11 @@
     ],
     "scripts": {
         "build": "rollup --config",
-        "build-readme": "node bin/build-readme.js",
-        "test": "node bin/test.js",
+        "build-readme": "node bin/build-readme.cjs",
+        "test": "node bin/test.cjs",
+        "test-module": "qunit test/module.js",
         "lint": "eslint js/ test/ bin/",
-        "prettify": "prettier js/ test/ bin/"
+        "prettier": "prettier js/ test/ bin/"
     },
     "prettier": {
         "printWidth": 160,

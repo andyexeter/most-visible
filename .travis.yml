@@ -14,6 +14,7 @@ matrix:
   fast_finish: true
 
 script:
-  - yarn run eslint js/
-  - grunt jshint --verbose
-  - grunt test --verbose
+  - yarn build
+  - yarn prettier --check
+  - yarn lint
+  - yarn test

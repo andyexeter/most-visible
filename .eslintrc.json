@@ -19,6 +19,8 @@
             "imports": "always-multiline",
             "exports": "always-multiline",
             "functions": "never"
-        }]
+        }],
+        "no-plusplus": "off",
+        "import/extensions": "off"
     }
 }

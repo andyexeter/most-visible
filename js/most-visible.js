@@ -1,4 +1,4 @@
-import getVisibleHeight from './get-visible-height';
+import getVisibleHeight from './get-visible-height.js';
 
 /**
  * Returns the most visible element from the instance's NodeList.

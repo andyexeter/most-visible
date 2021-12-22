@@ -11,13 +11,13 @@ var mostVisible = (function () {
      * @returns {number}    Visible height of the element in pixels or a percentage of the element's total height.
      */
     function getVisibleHeight(element, offset, percentage) {
-      const viewportHeight = document.documentElement.clientHeight,
-            rect = element.getBoundingClientRect(),
-            rectTopOffset = rect.top - offset,
-            rectBottomOffset = rect.bottom - offset,
-            height = rect.bottom - rect.top,
-            visibleTop = rectTopOffset >= 0 && rectTopOffset < viewportHeight,
-            visibleBottom = rectBottomOffset > 0 && rectBottomOffset < viewportHeight;
+      const viewportHeight = document.documentElement.clientHeight;
+      const rect = element.getBoundingClientRect();
+      const rectTopOffset = rect.top - offset;
+      const rectBottomOffset = rect.bottom - offset;
+      const height = rect.bottom - rect.top;
+      const visibleTop = rectTopOffset >= 0 && rectTopOffset < viewportHeight;
+      const visibleBottom = rectBottomOffset > 0 && rectBottomOffset < viewportHeight;
 
       const visiblePx = (() => {
         if (visibleTop) {
@@ -52,35 +52,35 @@ var mostVisible = (function () {
      * Returns the most visible element from the instance's NodeList.
      *
      * @param {NodeList<HTMLElement>|string} elements
-     * @param {{}} options
+     * @param {mostVisibleConfig} userOptions
      * @returns {HTMLElement} Most visible element.
      */
 
-    function mostVisible(elements, options) {
+    function mostVisible(elements, userOptions) {
       if (typeof elements === 'string') {
+        // eslint-disable-next-line no-param-reassign
         elements = document.querySelectorAll(elements);
       }
+      /** @type {mostVisibleConfig} options * */
 
-      options = Object.assign({}, mostVisible.defaults, options);
+
+      const options = { ...mostVisible.defaults,
+        ...userOptions
+      };
       return Array.from(elements).reduce((_ref, element) => {
         let [accValue, accElement] = _ref;
         const value = getVisibleHeight(element, options.offset, options.percentage);
-
-        if (value > accValue) {
-          accValue = value;
-          accElement = element;
-        }
-
-        return [accValue, accElement];
+        return value > accValue ? [value, element] : [accValue, accElement];
       }, [0, null])[1];
     }
     /**
-     * mostVisible default options
-     *
-     * @namespace
-     * @property {{}}      defaults             Default options hash.
-     * @property {boolean} defaults.percentage  Whether to calculate visibility as a percentage of height.
-     * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
+     * @typedef {Object} mostVisibleConfig
+     * @property {boolean} percentage  Whether to calculate visibility as a percentage of height.
+     * @property {number}  offset      An offset to take into account when calculating visibility.
+     */
+
+    /**
+     * @type {mostVisibleConfig}
      */
 
 
@@ -90,6 +90,7 @@ var mostVisible = (function () {
     };
 
     function makejQueryPlugin($, mostVisible) {
+      // eslint-disable-next-line no-param-reassign, func-names
       $.fn.mostVisible = function (options) {
         return this.filter(mostVisible(this.get(), options));
       };
