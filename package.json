@@ -44,8 +44,9 @@
         "build": "rollup --config",
         "test": "node bin/test.cjs",
         "test-module": "qunit test/module.js",
-        "lint": "eslint js/ test/ bin/",
-        "prettier": "prettier js/ test/ bin/"
+        "lint": "eslint js/ test/",
+        "prettier": "prettier js/ test/ bin/",
+        "ci": "rollup --config && prettier js/ test/ bin/ --check && eslint js/ test/ && node bin/test.cjs && qunit test/module.js"
     },
     "prettier": {
         "printWidth": 160,
