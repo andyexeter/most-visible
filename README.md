@@ -6,7 +6,7 @@
 [![Size](https://img.shields.io/bundlephobia/min/most-visible@2.0.0)](https://unpkg.com/most-visible@2.0.0/dist/most-visible.min.js)
 [![Size](https://img.shields.io/bundlephobia/minzip/most-visible@2.0.0)](https://unpkg.com/most-visible@2.0.0/dist/most-visible.min.js)
 
-A JavaScript module and jQuery plugin which returns the most visible element from a given set.
+A zero dependency JavaScript module and jQuery plugin which returns the most visible element from a given set.
 
 ## Installation
 
@@ -22,6 +22,12 @@ A JavaScript module and jQuery plugin which returns the most visible element fro
 ```
 
 #### Package Managers
+
+Install via [Bun](https://bun.sh/):
+```sh
+$ bun add most-visible
+```
+
 Install via yarn:
 ```sh
 $ yarn add most-visible
