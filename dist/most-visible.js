@@ -18,33 +18,26 @@ var mostVisible = (function () {
       const height = rect.bottom - rect.top;
       const visibleTop = rectTopOffset >= 0 && rectTopOffset < viewportHeight;
       const visibleBottom = rectBottomOffset > 0 && rectBottomOffset < viewportHeight;
-
       const visiblePx = (() => {
         if (visibleTop) {
           // If both the top and bottom are visible, the whole element is visible
           return visibleBottom ? height : viewportHeight - rect.top;
         }
-
         if (visibleBottom) {
           return rectBottomOffset;
         }
-
         if (height > viewportHeight && rectTopOffset < 0) {
           const absTop = Math.abs(rectTopOffset);
-
           if (absTop < height) {
             // Part of the element is visible
             return height - absTop;
           }
         }
-
         return 0;
       })();
-
       if (percentage) {
         return visiblePx / height * 100;
       }
-
       return visiblePx;
     }
 
@@ -55,16 +48,15 @@ var mostVisible = (function () {
      * @param {mostVisibleConfig} userOptions
      * @returns {HTMLElement} Most visible element.
      */
-
     function mostVisible(elements, userOptions) {
       if (typeof elements === 'string') {
         // eslint-disable-next-line no-param-reassign
         elements = document.querySelectorAll(elements);
       }
+
       /** @type {mostVisibleConfig} options * */
-
-
-      const options = { ...mostVisible.defaults,
+      const options = {
+        ...mostVisible.defaults,
         ...userOptions
       };
       return Array.from(elements).reduce((_ref, element) => {
@@ -73,6 +65,7 @@ var mostVisible = (function () {
         return value > accValue ? [value, element] : [accValue, accElement];
       }, [0, null])[1];
     }
+
     /**
      * @typedef {Object} mostVisibleConfig
      * @property {boolean} percentage  Whether to calculate visibility as a percentage of height.
@@ -82,8 +75,6 @@ var mostVisible = (function () {
     /**
      * @type {mostVisibleConfig}
      */
-
-
     mostVisible.defaults = {
       percentage: false,
       offset: 0
@@ -96,6 +87,7 @@ var mostVisible = (function () {
       };
     }
 
+    // Try adding the jQuery plugin to window.jQuery
     if (window && window.jQuery) {
       makejQueryPlugin(window.jQuery, mostVisible);
     }

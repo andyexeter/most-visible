@@ -9,20 +9,20 @@
     "author": "Andy Palmer <andy@andypalmer.me>",
     "license": "MIT",
     "devDependencies": {
-        "@babel/core": "^7.16.0",
-        "@babel/preset-env": "^7.16.0",
-        "@rollup/plugin-babel": "^5.3.0",
-        "@rollup/plugin-node-resolve": "^13.0.6",
-        "eslint": "^7.32.0",
-        "eslint-config-airbnb-base": "^14.2.1",
-        "eslint-plugin-import": "^2.25.2",
-        "jquery": "^3.6.0",
-        "node-qunit-puppeteer": "^2.1.0",
-        "prettier": "^2.4.1",
-        "puppeteer": "^10.4.0",
-        "qunit": "^2.17.2",
-        "rollup": "^2.58.3",
-        "rollup-plugin-terser": "^7.0.2"
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "eslint": "^8.51.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.28.1",
+        "jquery": "^3.7.1",
+        "node-qunit-puppeteer": "^2.1.2",
+        "prettier": "^3.0.3",
+        "puppeteer": "^21.3.8",
+        "qunit": "^2.20.0",
+        "rollup": "^4.1.4"
     },
     "files": [
         "dist",
@@ -50,6 +50,7 @@
     },
     "prettier": {
         "printWidth": 160,
-        "singleQuote": true
+        "singleQuote": true,
+        "trailingComma": "es5"
     }
 }
