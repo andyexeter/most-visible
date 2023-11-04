@@ -1,5 +1,5 @@
 import QUnit from 'qunit';
-import mostVisible from '../js/most-visible.js';
+import { mostVisible } from '../dist/most-visible.mjs';
 
 QUnit.module('mostVisible');
 

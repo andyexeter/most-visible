@@ -1,19 +1,51 @@
 {
     "name": "most-visible",
     "version": "2.0.0",
-    "title": "Most Visible",
     "description": "A JavaScript module and jQuery plugin which returns the most visible element from a given set.",
+    "keywords": [
+        "jquery",
+        "jquery-plugin",
+        "ecosystem:jquery",
+        "visibility",
+        "viewport"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/andyexeter/most-visible"
+    },
+    "license": "MIT",
+    "author": "Andy Palmer <andy@andypalmer.me>",
+    "type": "module",
     "main": "dist/most-visible.js",
     "module": "js/most-visible.js",
-    "type": "module",
-    "author": "Andy Palmer <andy@andypalmer.me>",
-    "license": "MIT",
+    "types": "dist/types",
+    "files": [
+        "dist",
+        "js",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "rollup --config",
+        "ci": "rollup --config && prettier js/ test/ bin/ --check && eslint js/ test/ && node bin/test.cjs && qunit test/module.js",
+        "lint": "eslint js/ test/",
+        "prettier": "prettier js/ test/ bin/",
+        "test": "node bin/test.cjs",
+        "test-module": "qunit test/module.js"
+    },
+    "prettier": {
+        "printWidth": 160,
+        "singleQuote": true,
+        "trailingComma": "es5"
+    },
     "devDependencies": {
         "@babel/core": "^7.23.2",
         "@babel/preset-env": "^7.23.2",
+        "@babel/preset-typescript": "^7.23.2",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-node-resolve": "^15.2.3",
         "@rollup/plugin-terser": "^0.4.4",
+        "@typescript-eslint/eslint-plugin": "^6.9.1",
+        "@typescript-eslint/parser": "^6.9.1",
         "eslint": "^8.51.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.28.1",
@@ -22,35 +54,7 @@
         "prettier": "^3.0.3",
         "puppeteer": "^21.3.8",
         "qunit": "^2.20.0",
-        "rollup": "^4.1.4"
-    },
-    "files": [
-        "dist",
-        "js",
-        "README.md"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/andyexeter/most-visible"
-    },
-    "keywords": [
-        "jquery",
-        "jquery-plugin",
-        "ecosystem:jquery",
-        "visibility",
-        "viewport"
-    ],
-    "scripts": {
-        "build": "rollup --config",
-        "test": "node bin/test.cjs",
-        "test-module": "qunit test/module.js",
-        "lint": "eslint js/ test/",
-        "prettier": "prettier js/ test/ bin/",
-        "ci": "rollup --config && prettier js/ test/ bin/ --check && eslint js/ test/ && node bin/test.cjs && qunit test/module.js"
-    },
-    "prettier": {
-        "printWidth": 160,
-        "singleQuote": true,
-        "trailingComma": "es5"
+        "rollup": "^4.1.4",
+        "typescript": "^5.2.2"
     }
 }

@@ -4,7 +4,7 @@ var mostVisible = (function () {
     /**
      * Returns the visible height of an element.
      *
-     * @param {HTMLElement} element Element to check the visibility of.
+     * @param {Element} element Element to check the visibility of.
      * @param {number}      offset
      * @param {boolean}     percentage
      *
@@ -41,20 +41,11 @@ var mostVisible = (function () {
       return visiblePx;
     }
 
-    /**
-     * Returns the most visible element from the instance's NodeList.
-     *
-     * @param {NodeList<HTMLElement>|string} elements
-     * @param {mostVisibleConfig} userOptions
-     * @returns {HTMLElement} Most visible element.
-     */
-    function mostVisible(elements, userOptions) {
+    const mostVisible = function (elements, userOptions) {
       if (typeof elements === 'string') {
         // eslint-disable-next-line no-param-reassign
         elements = document.querySelectorAll(elements);
       }
-
-      /** @type {mostVisibleConfig} options * */
       const options = {
         ...mostVisible.defaults,
         ...userOptions
@@ -62,19 +53,9 @@ var mostVisible = (function () {
       return Array.from(elements).reduce((_ref, element) => {
         let [accValue, accElement] = _ref;
         const value = getVisibleHeight(element, options.offset, options.percentage);
-        return value > accValue ? [value, element] : [accValue, accElement];
+        return accValue === null || value > accValue ? [value, element] : [accValue, accElement];
       }, [0, null])[1];
-    }
-
-    /**
-     * @typedef {Object} mostVisibleConfig
-     * @property {boolean} percentage  Whether to calculate visibility as a percentage of height.
-     * @property {number}  offset      An offset to take into account when calculating visibility.
-     */
-
-    /**
-     * @type {mostVisibleConfig}
-     */
+    };
     mostVisible.defaults = {
       percentage: false,
       offset: 0

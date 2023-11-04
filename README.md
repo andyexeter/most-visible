@@ -12,13 +12,13 @@ A zero dependency JavaScript module and jQuery plugin which returns the most vis
 
 #### Download
 * [most-visible.min.js](https://unpkg.com/most-visible@2.0.0/dist/most-visible.min.js)
-* [most-visible.js](https://unpkg.com/most-visible@2.0.0/dist/most-visible.js)
+* [most-visible.ts](https://unpkg.com/most-visible@2.0.0/dist/most-visible.js)
 
 #### CDN
 ```html
 <script src="https://unpkg.com/most-visible@2.0.0/dist/most-visible.min.js"></script>
 <!-- OR -->
-<script src="https://unpkg.com/most-visible@2.0.0/dist/most-visible.js"></script>
+<script src="https://unpkg.com/most-visible@2.0.0/dist/most-visible.ts"></script>
 ```
 
 #### Package Managers
@@ -73,13 +73,13 @@ import mostVisible from 'most-visible';
 const element = mostVisible('.my-elements');
 ```
 
-To attach the jQuery plugin to a non-global version of jQuery you must call `.makejQueryPlugin`:
+To attach the jQuery plugin to a non-global version of jQuery you must call `.makeJqueryPlugin`:
 
 ```js
 import $ from 'jquery';
-import {mostVisible, makejQueryPlugin} from 'most-visible';
+import {mostVisible, makeJqueryPlugin} from 'most-visible';
 
-makejQueryPlugin($, mostVisible);
+makeJqueryPlugin($, mostVisible);
 
 $('.my-elements').removeClass('active').mostVisible().addClass('active');
 ```
